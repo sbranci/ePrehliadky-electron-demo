@@ -1,17 +1,17 @@
 {
   "name": "eprehliadky-electron-demo",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder",
-    "package": "electron-builder -p always",
+    "package": "electron-builder --win -p always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
     "publish": [
-      { 
+      {
         "provider": "github",
         "owner": "sbranci",
         "repo": "ePrehliadky-electron-demo",
@@ -24,7 +24,7 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^22.0.2",
-    "electron-builder": "^23.6.0",
+    "electron-builder": "^22.10.3",
     "electron-updater": "^5.3.0"
   },
   "dependencies": {

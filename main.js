@@ -5,7 +5,6 @@ const log = require('electron-log')
 
 log.transports.file.resolvePath = () => path.join('C:/development/ePrehliadky/ePrehliadky-electron-demo/', '/logs/main.log');
 log.log("Application version = " + app.getVersion())
-log.warn('Some problem appears')
 
 let win;
 
