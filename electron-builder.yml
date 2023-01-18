@@ -1,4 +1,0 @@
-appId: ePrehliadky.electron.demo.autoUpdate
-publish:
-  provider: github
-  token: "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"
