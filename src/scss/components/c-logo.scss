@@ -1,0 +1,13 @@
+.c-logo {
+	font-size: 1.3rem;
+	font-weight: f-func-getfontweight(bold);
+
+	color: f-func-getcolor(black, 20);
+
+	& > .d-pictogram {
+		width: 2.4rem;
+		margin: -0.2rem 0.3rem 0 0;
+
+		vertical-align: middle;
+	};
+}

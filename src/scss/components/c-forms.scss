@@ -1,0 +1,262 @@
+.c-forms {
+	& > .d-form {
+		& > .d-section {
+			display: flex;
+			align-items: flex-start;
+			flex-wrap: wrap;
+
+			gap: 1rem;
+
+			& > .d-header {
+				width: 100%;
+				margin: 2.5rem 0 -0.5rem 0;
+			}
+
+			& > .d-formgroup {
+				font-size: 0.9em;
+
+				position: relative;
+
+				display: flex;
+				flex-wrap: wrap;
+
+				width: calc(33.3% - 0.65rem);
+
+				&.v-large {
+					width: calc(66.6% - 0.3rem);
+				}
+
+				&.v-full {
+					width: 100%;
+				}
+
+				&.v-text {
+					& > .d-field {
+						padding: 0 0.5rem;
+
+						border: 1px solid f-func-getcolor(black, 80);
+					}
+
+					&.v-divided {
+						& > .d-field {
+							width: calc(100% - 6.5rem);
+							margin-right: 0.5rem;
+						}
+					}
+				}
+
+				&.v-select {
+					& > .d-label {
+						position: relative;
+
+						&::after {
+							position: absolute;
+							right: 1rem;
+							bottom: -1.3rem;
+
+							display: block;
+
+							content: "⌄";
+						}
+
+						&.v-error {
+							&::after {
+								display: none;
+							}
+						}
+					}
+
+					& > .d-field {
+						line-height: 2.1rem;
+
+						height: 2.15rem;
+						padding: 0 0.5rem;
+
+						cursor: pointer;
+
+						border: 1px solid f-func-getcolor(black, 80);
+					}
+				}
+
+				&.v-radio {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+
+					gap: 1rem;
+
+					& > .d-legend {
+						display: flex;
+						align-items: flex-end;
+
+						min-height: 2.9rem;
+						padding-bottom: 0.6rem;
+					}
+
+					& > .d-label {
+						position: relative;
+
+						width: auto;
+						min-height: auto;
+						padding-left: 1.3rem;
+
+						cursor: pointer;
+
+						& > .d-field {
+							&::after {
+								position: absolute;
+								top: 0.3rem;
+								left: 2px;
+
+								width: 0.7rem;
+								height: 0.7rem;
+
+								content: "";
+
+								border-radius: 50%;
+								outline: 1px solid f-func-getcolor(black, 80);
+								outline-offset: 1px;
+							}
+
+							&:checked {
+								&::after {
+									background-color: f-func-getcolor(green);
+								}
+							}
+						}
+
+						&.v-error {
+							width: 100%;
+
+							&::after {
+								display: none;
+							}
+						}
+					}
+				}
+
+				&.v-textarea {
+					& > .d-field {
+						padding: 0 0.5rem;
+
+						resize: none;
+
+						border: 1px solid f-func-getcolor(black, 80);
+					}
+				}
+
+				&.has_error {
+					& > .d-label {
+						&.v-error {
+							font-size: 0.85em;
+
+							position: absolute;
+							z-index: 5;
+							top: 5.5rem;
+
+							display: inline-block;
+
+							width: auto;
+							max-width: 100%;
+							min-height: auto;
+							padding: 0.2rem 0.5rem;
+
+							color: f-func-getcolor(black, 100);
+							background-color: f-func-getcolor(red, -10);
+
+							&::before {
+								position: absolute;
+								top: -0.5rem;
+								left: 0.5rem;
+
+								width: 0;
+								height: 0;
+
+								content: "";
+
+								border-width: 0 0.5rem 0.5rem 0.5rem;
+								border-style: solid;
+								border-color: transparent transparent f-func-getcolor(red, -10) transparent;
+							}
+						}
+					}
+
+					&.v-text {
+						& > .d-field {
+							border-color: f-func-getcolor(red, -10);
+						}
+					}
+
+					&.v-select {
+						& > .d-field {
+							border-color: f-func-getcolor(red, -10);
+						}
+					}
+
+					&.v-radio {
+						& > .d-label {
+							&.v-error {
+								top: 2rem;
+							}
+
+							& > .d-field {
+								&::after {
+									outline-color: f-func-getcolor(red, -10);
+								}
+							}
+						}
+					}
+
+					&.v-textarea {
+						& > .d-field {
+							border-color: f-func-getcolor(red, -10);
+						}
+					}
+				}
+
+				&.is_disabled {
+					pointer-events: none;
+
+					& > .d-legend {
+						color: f-func-getcolor(black, 80);
+					}
+
+					& > .d-label {
+						color: f-func-getcolor(black, 80);
+					}
+
+					&.v-text {
+						& > .d-field {
+							background: f-func-getcolor(black, 97);
+						}
+					}
+
+					&.v-select {
+						& > .d-field {
+							background: f-func-getcolor(black, 97);
+						}
+					}
+				}
+
+				& > .d-label {
+					display: flex;
+					align-items: flex-end;
+
+					width: 100%;
+					min-height: 2.9rem;
+					padding-bottom: 0.3rem;
+
+					&.v-error {
+						display: none;
+					}
+				}
+
+				& > .d-field {
+					line-height: 2rem;
+
+					width: 100%;
+				}
+			}
+		}
+	}
+}

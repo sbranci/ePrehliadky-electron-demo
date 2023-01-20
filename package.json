@@ -1,8 +1,8 @@
 {
   "name": "eprehliadky-electron-demo",
-  "version": "7.0.0",
+  "version": "7.0.17",
   "description": "",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder",

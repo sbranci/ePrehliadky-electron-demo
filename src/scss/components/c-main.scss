@@ -1,0 +1,98 @@
+.c-main {
+	display: flex;
+
+	max-width: f-func-getdevice(desktop);
+	height: calc(100% - 3rem);
+	margin: 0 auto;
+
+	& > .d-check:checked ~ .d-left {
+		width: 13rem;
+	}
+
+	& > .d-check:checked ~ .d-left {
+		& > .d-control {
+			& > .d-icon {
+				&::after {
+					border-width: 0 0 1px 1px;
+				}
+			}
+		}
+	}
+
+	& > .d-left {
+		overflow: hidden;
+
+		width: 2.9rem;
+		padding: 1.3rem 0 0;
+
+		transition: all 1s;
+
+		background: f-func-getcolor(black, 15);
+
+		& > .d-control {
+			display: flex;
+			justify-content: flex-end;
+
+			cursor: pointer;
+
+			color: f-func-getcolor(black,80);
+
+			& > .d-icon {
+				font-size: 1rem;
+
+				position: relative;
+
+				width: 1.4rem;
+				height: 1.4rem;
+				margin: 0 1rem 1.3rem 0;
+
+				&:hover {
+					&::after {
+						filter: brightness(200%);
+					}
+				}
+
+				&::after {
+					position: absolute;
+					top: 50%;
+					right: 0.3em;
+
+					width: 0.5em;
+					height: 0.5em;
+
+					content: '';
+					transform: translate(0, -70%) rotate(45deg);
+
+					border: 2px solid currentColor;
+					border-width: 1px 1px 0 0;
+				}
+			}
+		}
+	}
+
+	& > .d-right {
+		display: flex;
+		flex-direction: column;
+
+		width: calc(100% - 2.9rem);
+		padding: 1rem;
+
+		background: f-func-getcolor(black, 100);
+
+		& > .d-top {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		& > .d-center {
+			& > .d-navigation {
+				display: flex;
+				justify-content: space-between;
+
+				padding-top: 1rem;
+
+				border-top: 1px solid f-func-getcolor(black, 90);
+			}
+		}
+	}
+}

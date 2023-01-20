@@ -1,0 +1,148 @@
+.c-tables {
+	font-size: 0.875rem;
+
+	display: flex;
+	overflow-x: auto;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 2em;
+
+	& > .d-length {
+		margin: 0.8rem 0;
+
+		& > .d-label {
+			position: relative;
+
+			&::after {
+				position: absolute;
+				bottom: 0.3rem;
+				left: 5.9rem;
+
+				display: block;
+
+				content: "⌄";
+			}
+
+			& > .d-field {
+				margin: 0 0.3rem;
+				padding: 0.3rem 1rem 0.1rem 0.3rem;
+
+				cursor: pointer;
+
+				border: 1px solid f-func-getcolor(black, 95);
+			}
+		}
+	}
+
+	& > .d-search {
+		margin: 0.8rem 0;
+
+		& > .d-label {
+			& > .d-field {
+				margin: 0 0.1rem 0 0.3rem;
+				padding: 0.3rem 1rem 0.3rem 0.3rem;
+
+				border: 1px solid f-func-getcolor(black, 95);
+			}
+		}
+	}
+
+	& > .d-info {
+		margin: 0.8rem 0;
+	}
+
+	& > .d-pager {
+		display: flex;
+
+		margin: 0.5rem;
+
+		& > .d-button {
+			padding: 0.5rem;
+
+			border: 1px solid f-func-getcolor(black, 95);
+		}
+
+		& > .d-pages {
+			display: flex;
+
+			margin: 0 1rem;
+
+			& > .d-page {
+				margin: 0 0.1rem;
+				padding: 0.5rem;
+
+				cursor: pointer;
+
+				border: 1px solid transparent;
+
+				&:hover {
+					border: 1px solid f-func-getcolor(black, 95);
+				}
+
+				&.v-ellipsis {
+					pointer-events: none;
+
+					&:hover {
+						border-color: transparent;
+					}
+				}
+
+				&.v-current {
+					background-color: f-func-getcolor(black, 95);
+				}
+			}
+		}
+	}
+
+	& > .d-table {
+		width: 100% !important;
+
+		text-align: center;
+
+		& > .d-head {
+			& > .d-row {
+				& > .d-cell {
+					padding: 0.7em;
+
+					white-space: nowrap;
+
+					border: 1px solid f-func-getcolor(black, 80%);
+
+					&.v-name {
+						font-size: 1.125rem;
+					}
+				}
+
+				&:nth-child(2) {
+					& > .d-cell {
+						&:first-child {
+							width: 11em;
+							min-width: 11em;
+						}
+					}
+				}
+			}
+		}
+
+		& > .d-body {
+			& > .d-row {
+				&:nth-child(even) {
+					& > .d-cell {
+						background-color: f-func-getcolor(black, 95%);
+					}
+				}
+
+				& > .d-cell {
+					padding: 0.7em;
+
+					white-space: nowrap;
+
+					border: 1px solid f-func-getcolor(black, 80%);
+				}
+			}
+		}
+	}
+}

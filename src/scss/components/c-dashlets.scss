@@ -1,0 +1,68 @@
+.c-dashlets {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	margin: 1.5rem 0 2rem;
+
+	& > .d-dashlet {
+		width: 12rem;
+
+		text-align: center;
+
+		& > .d-link {
+			line-height: 1rem;
+
+			display: block;
+
+			padding: 1.2rem;
+
+			text-decoration: none;
+
+			color: f-func-getcolor(black, 20);
+
+			&:hover {
+				& > .d-datapoint {
+					color: f-func-getcolor(black, 20);
+					background: linear-gradient(white, white) padding-box,
+					linear-gradient(45deg, f-func-getcolor(purple), f-func-getcolor(red)) border-box;
+				}
+			}
+
+			& > .d-datapoint {
+				font-size: 1.5em;
+				font-weight: f-func-getfontweight(light);
+				line-height: 9rem;
+
+				display: block;
+
+				height: 9rem;
+				margin: 0 0.3rem 1rem;
+
+				border: 1px solid transparent;
+				border-radius: 50%;
+				background: linear-gradient(white, white) padding-box,
+				linear-gradient(45deg, f-func-getcolor(green), f-func-getcolor(green, 20)) border-box;
+			}
+
+			& > .d-text {
+				font-size: 0.8em;
+				font-weight: f-func-getfontweight(normal);
+
+				display: block;
+
+				margin: 0.5em;
+			}
+
+			& > .d-description {
+				font-size: 0.55em;
+				font-weight: f-func-getfontweight(normal);
+				line-height: 1.4em;
+
+				display: block;
+
+				color: f-func-getcolor(black, 60);
+			}
+		}
+	}
+}

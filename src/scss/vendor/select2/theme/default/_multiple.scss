@@ -1,0 +1,139 @@
+.select2-selection--multiple {
+	position: relative;
+
+	cursor: text;
+	cursor: pointer;
+
+	border: 1px solid #aaaaaa !important;
+	border-radius: 0;
+	background-color: white;
+
+	&::after {
+		font-size: 2rem;
+
+		position: absolute;
+		top: 1.7rem;
+		right: 1rem;
+
+		width: 0.75rem;
+		height: 0.75rem;
+
+		content: "";
+		transform: rotate(45deg);
+		transform-origin: center center;
+
+		border-right: 2px solid #004a8f;
+		border-bottom: 2px solid #004a8f;
+	}
+
+	.select2-selection__rendered {
+		box-sizing: border-box;
+		width: 100%;
+		margin: 0;
+		padding: 0 5px;
+
+		list-style: none;
+
+		li {
+			list-style: none;
+		}
+	}
+
+	.select2-selection__clear {
+		font-weight: bold;
+
+		float: right;
+
+		margin-top: 5px;
+		margin-right: 10px;
+		// This padding is to account for the bottom border for the first
+		// selection row and the top border of the second selection row.
+		// Without it, selections on the first row may be offset incorrectly
+		// and appear in their own row instead of going to the second row
+		padding: 1px;
+
+		cursor: pointer;
+	}
+
+	.select2-selection__choice {
+		font-size: 1.25rem;
+		line-height: 3.5rem;
+
+		position: relative;
+
+		float: left;
+
+		height: 3.5rem;
+		margin-top: 5px;
+		margin-right: 5px;
+		padding: 0 1rem 0 2rem;
+
+		cursor: default;
+
+		color: #ffffff;
+		border-radius: 0;
+		background-color: #004a8f;
+	}
+
+	.select2-selection__choice__remove {
+		font-size: 2rem;
+		font-weight: bold;
+
+		position: absolute;
+		left: 0.5rem;
+
+		display: inline-block;
+
+		margin-right: 2px;
+
+		cursor: pointer;
+
+		color: #ffffff;
+
+		&:hover {
+			color: #999999;
+		}
+	}
+
+	.select2-search__field {
+		line-height: 3.5rem;
+	}
+}
+
+&[dir="rtl"] {
+	.select2-selection--multiple {
+		.select2-selection__choice,
+		.select2-search--inline {
+			float: right;
+		}
+
+		.select2-selection__choice {
+			margin-right: auto;
+			margin-left: 5px;
+		}
+
+		.select2-selection__choice__remove {
+			margin-right: auto;
+			margin-left: 2px;
+		}
+	}
+}
+
+&.select2-container--focus {
+	.select2-selection--multiple {
+		border: solid black 1px;
+		outline: 0;
+	}
+}
+
+&.select2-container--disabled {
+	.select2-selection--multiple {
+		cursor: default;
+
+		background-color: #eeeeee;
+	}
+
+	.select2-selection__choice__remove {
+		display: none;
+	}
+}

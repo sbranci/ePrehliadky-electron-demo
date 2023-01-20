@@ -1,0 +1,89 @@
+.c-step {
+	margin-bottom: 1rem;
+	padding: 1rem;
+
+	border: 1px solid f-func-getcolor(black, 80);
+
+	&.v-primary {
+		border: none;
+
+		& > .d-header {
+			& > .d-navigation {
+				display: none;
+			}
+		}
+	}
+
+	& > .d-check:checked ~ .d-content {
+		display: block;
+	}
+
+	& > .d-check:checked ~ .d-header {
+		.d-navigation {
+			& > .d-icon {
+				&::after {
+					border-width: 1px 0 0 1px;
+				}
+			}
+		}
+	}
+
+	& > .d-header {
+		display: flex;
+		justify-content: space-between;
+
+		margin-bottom: 1rem;
+
+		& > .d-navigation {
+			line-height: 3rem;
+
+			display: flex;
+			justify-content: flex-end;
+
+			cursor: pointer;
+
+			color: f-func-getcolor(black, 60);
+
+			& > .d-icon {
+				font-size: 1rem;
+
+				position: relative;
+
+				width: 1.4rem;
+				height: 1.4rem;
+				margin: 0.5rem 0.5rem 0 0;
+
+				&:hover {
+					&::after {
+						filter: brightness(10%);
+					}
+				}
+
+				&::after {
+					position: absolute;
+					top: 50%;
+					right: 0.3em;
+
+					width: 0.5em;
+					height: 0.5em;
+
+					content: '';
+					transform: translate(0, -70%) rotate(45deg);
+
+					border: 2px solid currentColor;
+					border-width: 0 1px 1px 0;
+				}
+			}
+		}
+	}
+
+	& > .d-content {
+		display: none;
+	}
+
+	& > .d-summary {
+		padding-top: 1rem;
+
+		color: f-func-getcolor(red);
+	}
+}

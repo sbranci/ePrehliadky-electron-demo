@@ -1,0 +1,64 @@
+.c-icons {
+	font-size: 1rem;
+	line-height: 1;
+
+	display: inline-block;
+	overflow: hidden;
+
+	width: 1em;
+	height: 1em;
+	margin: 0 0.2em 0.2em 0;
+
+	vertical-align: middle;
+	text-decoration: inherit;
+
+	fill: currentColor;
+
+	&:hover {
+		filter: brightness(85%);
+	}
+
+	&.v-nomargin {
+		margin: 0;
+	}
+
+	&.v-l {
+		font-size: 1.4rem;
+
+		width: 1.4rem;
+		height: 1.4rem;
+	}
+
+	&.v-menu {
+		font-size: 1.4rem;
+
+		width: 1.3rem;
+		height: 1.3rem;
+		margin: 0 0.55em 0 0;
+	}
+
+	&.v-left {
+		position: relative;
+
+		&:hover {
+			&::after {
+				filter: brightness(85%);
+			}
+		}
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: 0.3em;
+
+			width: 0.5em;
+			height: 0.5em;
+
+			content: '';
+			transform: translate(0, -70%) rotate(45deg);
+
+			border: 2px solid currentColor;
+			border-width: 2px 2px 0 0;
+		}
+	}
+}

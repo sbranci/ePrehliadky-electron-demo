@@ -1,0 +1,70 @@
+/*string replace*/
+@function f-func-str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + f-func-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+/*get colors*/
+@function f-func-getcolor($color, $lighten: 0.0%, $transp: 1) {
+	@if map-has-key($b-var-colors, $color) {
+		@return adjust-color(map-get($b-var-colors, $color), $lightness: $lighten, $alpha: $transp);
+	}
+
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{b-var-colors}`. "
+		+ "Please make sure it is defined in `$b-colors` map.";
+	}
+}
+
+/*get base parameter*/
+@function f-func-getbase($parameter) {
+	@if map-has-key($b-var-base, $parameter) {
+		@return map-get($b-var-base, $parameter);
+	}
+
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{b-var-base}`. "
+		+ "Please make sure it is defined in `$b-var-base` map.";
+	}
+}
+
+/*get font weight*/
+@function f-func-getfontweight($parameter) {
+	@if map-has-key($b-var-fontweights, $parameter) {
+		@return map-get($b-var-fontweights, $parameter);
+	}
+
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$b-var-fontweights}`. "
+		+ "Please make sure it is defined in `$b-var-fontweight` map.";
+	}
+}
+
+/*get device*/
+@function f-func-getdevice($device) {
+	@if map-has-key($b-var-devices, $device) {
+		@return map-get($b-var-devices, $device);
+	}
+
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{b-var-devices}`. "
+		+ "Please make sure it is defined in `$b-var-devices` map.";
+	}
+}
+
+/*generate sequence*/
+@function f-func-generate-sequence($seqlength, $startpoint, $coeficient) {
+	$startingpoints: ($startpoint);
+
+	@for $number from 1 through $seqlength - 1 {
+		$startpoint: $startpoint * $coeficient;
+		$startingpoints: join($startpoint, $startingpoints, comma);
+	}
+
+	@return $startingpoints;
+}

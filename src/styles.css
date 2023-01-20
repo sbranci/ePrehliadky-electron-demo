@@ -1,7 +1,7 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   font-family: sans-serif;
   background-color: #eaeaea;
   text-align: center;
@@ -53,6 +53,10 @@ body {
 .grid-item-bottom {
   padding: 1rem;
   text-align: start;
+}
+
+p {
+  font-size: 12px;
 }
 
 a {

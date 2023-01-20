@@ -1,0 +1,66 @@
+#ext-res .select2-container {
+	height: auto;
+}
+
+#ext-res .select2-dropdown {
+	font-size: 1rem;
+	line-height: 1.5rem;
+
+	padding: 0;
+
+	border: 0;
+	border-radius: 0;
+	background: #f7f7f7;
+}
+
+#ext-res .select2-results__option {
+	font-size: 1.25rem;
+	line-height: 2rem;
+
+	padding: 0.6rem 1rem 0.6rem 3rem;
+}
+
+#ext-res .select2-results__options {
+	max-height: 16rem !important;
+}
+
+#ext-res .select2-results__option[aria-selected="true"] {
+	font-size: 1.25rem;
+
+	position: relative;
+
+	color: #333333;
+	background: #e6e6e6;
+}
+
+#ext-res .select2-results__option--highlighted[aria-selected] {
+	color: #333333 !important;
+	background: #e6e6e6 !important;
+}
+
+#ext-res .select2-results__option[aria-selected="true"]::after {
+	position: absolute;
+	top: 1rem;
+	left: 0.8rem;
+
+	width: 1.5rem;
+	height: 0.8rem;
+
+	content: "";
+	transform: rotate(135deg);
+
+	border: 2px solid #004a8f;
+	border-width: 2px 2px 0 0;
+}
+
+.highcharts-munip .highcharts-map-series .highcharts-series-0 .highcharts-point {
+    stroke: transparent;
+}
+
+.highcharts-kr-municipality .highcharts-point {
+    fill: transparent;
+}
+
+.highcharts-ob-municipality .highcharts-point {
+    stroke: #f7f7f7;
+}

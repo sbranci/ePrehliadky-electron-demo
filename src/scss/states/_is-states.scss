@@ -1,0 +1,38 @@
+.is_hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+.is_readeronly {
+	position: absolute !important;
+
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+
+	width: 1px;
+	height: 1px;
+}
+
+.is_frozen {
+	position: relative;
+	z-index: 1;
+
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	&::after {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		content: "";
+
+		background-color: f-func-getcolor(black, 0, -0.4);
+	}
+}

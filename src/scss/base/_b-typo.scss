@@ -1,0 +1,29 @@
+.b-typo-h1,
+.b-typo-h2,
+.b-typo-h3,
+.b-typo-h4,
+.b-typo-h5 {
+	font-family: 'noto';
+	font-weight: f-func-getfontweight(normal);
+
+	margin: 0;
+	padding: 0.5em 0 0.5em;
+
+	color: f-func-getcolor(black, 30);
+
+	&.v-center {
+		text-align: center;
+	}
+}
+
+.b-typo-link {
+	text-decoration: none;
+
+	color: f-func-getcolor(blue);
+
+	&:hover {
+		text-decoration: underline;
+
+		filter: brightness(85%);
+	}
+}

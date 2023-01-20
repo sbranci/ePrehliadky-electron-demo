@@ -1,0 +1,13 @@
+.c-header {
+	& > .d-topbar {
+		display: block;
+
+		background-color: beige;
+	}
+
+	& > .d-sidebar {
+		display: block;
+
+		background-color: sienna;
+	}
+}

@@ -1,0 +1,16 @@
+.c-notifications {
+	font-size: 0.85rem;
+
+	margin-bottom: 1rem;
+
+	color: f-func-getcolor(green, 0);
+
+	& > .d-notification {
+		position: relative;
+
+		margin: 0.2rem 0;
+		padding: 0.4rem 1rem;
+
+		background-color: f-func-getcolor(green, 70);
+	}
+}

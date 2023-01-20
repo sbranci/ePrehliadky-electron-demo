@@ -1,0 +1,53 @@
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+	cursor: pointer;
+	*cursor: hand;
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+table.dataTable thead .sorting {
+	position: relative;
+	
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		border: 2px solid f-func-getcolor(black, 80%);
+		width: 0.5rem;
+		height: 0.5rem;
+		right: 0.3rem;
+		top: 50%;
+		transform: translate(0, -70%) rotate(45deg);
+		border-width: 2px 0 0 2px;
+	}
+
+	&::after {
+		transform: translate(0, -20%) rotate(45deg);
+		border-width: 0 2px 2px 0;
+	}
+}
+
+table.dataTable thead .sorting_asc {
+
+	&::before {
+		border-color: f-func-getcolor(black, 40);
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+table.dataTable thead .sorting_desc {
+
+	&::before {
+		display: none;
+	}
+
+	&::after {
+		border-color: f-func-getcolor(black, 40);
+	}
+}

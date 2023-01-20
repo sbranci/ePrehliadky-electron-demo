@@ -18,7 +18,7 @@
 
 function getAppVersion() {
   settings = window.bridge.getAppVersion().then(appVersion => {
-      document.getElementById('version').innerText = 'Version ' + appVersion;
+      document.getElementById('version').innerText = 'app version ' + appVersion;
   })
 }
 

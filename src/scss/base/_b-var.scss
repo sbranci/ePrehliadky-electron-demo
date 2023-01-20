@@ -1,0 +1,28 @@
+$b-var-colors: (
+	green: hsla(100, 100%, 25%, 1),
+	red: hsla(340, 95%, 50%, 1),
+	purple: hsla(310, 100%, 35%, 1),
+	blue:hsla(221, 100%, 50%, 1),
+	black: hsla(0, 0%, 0%, 1),
+);
+$b-var-base: (
+	font-family: #{noto},
+	font-size: 100%,
+	line-height: 1.5,
+	background-color: hsla(0, 0%, 15%, 1),
+	color: hsla(0, 0%, 20%, 1)
+);
+$b-var-fontweights: (
+	light: 300,
+	normal: 400,
+	bold: 700
+);
+$b-var-devices: (
+	mobile-landscape: 414px,
+	tablet: 600px,
+	tablet-landscape: 901px,
+	desktop: 1199px,
+	desktop-wide: 1399px,
+	qhd: 2000px,
+	uhd: 3000px
+);

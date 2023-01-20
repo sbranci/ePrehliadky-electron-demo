@@ -1,91 +1,10 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Electron Auto Update Example</title>
-  <style>
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 20px;
-      font-family: sans-serif;
-      background-color: #eaeaea;
-      text-align: center;
-    }
-    #notification {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 200px;
-      padding: 20px;
-      border-radius: 5px;
-      background-color: white;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-<body> -->
-  <!-- <div id="notification" class="hidden">
-    <p id="message"></p>
-    <button id="close-button" onClick="closeNotification()">
-      Close
-    </button>
-    <button id="restart-button" onClick="restartApp()" class="hidden">
-      Restart
-    </button>
-  </div> -->
-
-  <!-- <h1>Electron Auto Update Example</h1>
-  <p id="version"></p>
-  <script>
-    var appVersion = require("electron").app.getVersion();
-    console.log(appVersion);
-    document.getElementById('version').innerText = 'Version ' + appVersion;
-    // document.getElementById('version').innerText = 'Version ';
-
-    // console.log("App version is ???")
-    // const { ipcRenderer } = require('electron');
-    // const version = document.getElementById('version');
-    // const notification = document.getElementById('notification');
-    // const message = document.getElementById('message');
-    // const restartButton = document.getElementById('restart-button');
-
-    // ipcRenderer.send('app_version');
-    // ipcRenderer.on('app_version', (event, arg) => {
-    //   ipcRenderer.removeAllListeners('app_version');
-    //   version.innerText = 'Version ' + arg.version;
-    // });
-    // ipcRenderer.on('update_available', () => {
-    //   ipcRenderer.removeAllListeners('update_available');
-    //   message.innerText = 'A new update is available. Downloading now...';
-    //   notification.classList.remove('hidden');
-    // });
-    // ipcRenderer.on('update_downloaded', () => {
-    //   ipcRenderer.removeAllListeners('update_downloaded');
-    //   message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
-    //   restartButton.classList.remove('hidden');
-    //   notification.classList.remove('hidden');
-    // });
-
-    // function closeNotification() {
-    //   notification.classList.add('hidden');
-    // }
-    // function restartApp() {
-    //   ipcRenderer.send('restart_app');
-    // }
-  </script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Electron Auto Update Example</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <p id="version"></p>
@@ -124,6 +43,7 @@
               <option>ziadne</option>
               <option>1</option>
               <option>2</option>
+              <option>3</option>
             </select>
           </fieldset>
         </div>  
@@ -161,6 +81,7 @@
             <legend for="citizenship">Statne obcianstvo</legend>
             <select id="citizenship">
               <option>slovenske</option>
+              <option>ziadne</option>
             </select>
           </fieldset>
         </div>
@@ -169,6 +90,8 @@
           <fieldset>
             <select id="insurance">
               <option>Dovera</option>
+              <option>Vseobecna</option>
+              <option>Union</option>
             </select>
             <legend for="insurance">Poistovna</legend>
           </fieldset>
@@ -178,6 +101,7 @@
           <fieldset>
             <select id="nationality">
               <option>slovenska</option>
+              <option>ina</option>
             </select>
             <legend for="nationality">Narodnost</legend>
           </fieldset>
@@ -207,6 +131,7 @@
           <fieldset>
             <select id="maritalStatus">
               <option>zenaty / vydata</option>
+              <option>single</option>
             </select>
             <legend for="maritalStatus">Rodinny stav</legend>
           </fieldset>
@@ -250,6 +175,6 @@
       </div>
     </div>
 
-    <script src="./renderer.js"></script>
+    <script src="renderer.js"></script>
   </body>
 </html>

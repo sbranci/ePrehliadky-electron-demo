@@ -1,0 +1,40 @@
+.select2-selection--multiple {
+	display: block;
+
+	box-sizing: border-box;
+	min-height: 32px;
+
+	cursor: pointer;
+	-webkit-user-select: none;
+	        user-select: none;
+
+	border-radius: 0;
+
+	.select2-selection__rendered {
+		display: inline-block;
+		overflow: hidden;
+
+		padding-left: 8px;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+.select2-search--inline {
+	float: left;
+
+	.select2-search__field {
+		font-size: 100%;
+
+		box-sizing: border-box;
+		margin-top: 5px;
+		padding: 0;
+
+		border: none;
+
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+		}
+	}
+}

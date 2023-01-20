@@ -1,0 +1,116 @@
+.c-buttons {
+	display: inline-block;
+
+	padding: 0.6em 1em;
+
+	text-decoration: none;
+
+	color: f-func-getcolor(black, 30);
+	border-radius: 2px;
+	outline: 1px solid f-func-getcolor(black, 80);
+	background: f-func-getcolor(black, 100);
+
+	&:hover {
+		background: f-func-getcolor(black, 90);
+	}
+
+	&.v-small {
+		padding: 0.2em 0.5em;
+	}
+
+	&.v-float {
+		float: right;
+	}
+
+	&.v-equal {
+		padding: 0.6em;
+	}
+
+	&.v-green {
+		color: f-func-getcolor(black, 100);
+		outline-color: transparent;
+		background: linear-gradient(47deg, f-func-getcolor(green, -5) 0%, f-func-getcolor(green) 55%, f-func-getcolor(green, 10) 100%);
+		background-color: f-func-getcolor(green);
+
+		&:hover {
+			color: f-func-getcolor(green);
+			outline-color: f-func-getcolor(green);
+			background: f-func-getcolor(black, 100);
+		}
+	}
+
+	&.v-form {
+		width: 6rem;
+		height: 2.1rem;
+		padding: 0.2rem;
+	}
+
+	&.v-close {
+		line-height: normal;
+
+		position: absolute;
+		top: 0.6em;
+		right: 0.6em;
+
+		width: 2em;
+		height: 2em;
+		padding: 0.5em;
+
+		cursor: pointer;
+		text-align: center;
+
+		color: currentColor;
+		border: none;
+		outline: none;
+		background: transparent;
+
+		appearance: none;
+
+		&:focus {
+			outline: 2px solid f-func-getcolor(black, 80);
+			outline-offset: 1px;
+		}
+
+		&:hover {
+			color: f-func-getcolor(red);
+		}
+
+		&::before {
+			position: absolute;
+			left: 0.3em;
+
+			display: block;
+
+			width: 1.5em;
+			height: 1px;
+
+			content: "";
+			transform: rotate(45deg);
+
+			background: currentColor;
+		}
+
+		&::after {
+			position: absolute;
+			left: 0.3em;
+
+			display: block;
+
+			width: 1.5em;
+			height: 1px;
+
+			content: "";
+			transform: rotate(135deg);
+
+			background: currentColor;
+		}
+
+		&.v-top {
+			top: 0.3rem;
+		}
+
+		&.v-small {
+			font-size: 0.65rem;
+		}
+	}
+}
