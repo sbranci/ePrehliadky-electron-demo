@@ -1,8 +1,255 @@
+<!-- <!DOCTYPE html>
 <html>
+<head>
+  <title>Electron Auto Update Example</title>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background-color: #eaeaea;
+      text-align: center;
+    }
+    #notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body> -->
+  <!-- <div id="notification" class="hidden">
+    <p id="message"></p>
+    <button id="close-button" onClick="closeNotification()">
+      Close
+    </button>
+    <button id="restart-button" onClick="restartApp()" class="hidden">
+      Restart
+    </button>
+  </div> -->
 
-<body>
-  <h1>
-    Heloooo
-  </h1>
+  <!-- <h1>Electron Auto Update Example</h1>
+  <p id="version"></p>
+  <script>
+    var appVersion = require("electron").app.getVersion();
+    console.log(appVersion);
+    document.getElementById('version').innerText = 'Version ' + appVersion;
+    // document.getElementById('version').innerText = 'Version ';
+
+    // console.log("App version is ???")
+    // const { ipcRenderer } = require('electron');
+    // const version = document.getElementById('version');
+    // const notification = document.getElementById('notification');
+    // const message = document.getElementById('message');
+    // const restartButton = document.getElementById('restart-button');
+
+    // ipcRenderer.send('app_version');
+    // ipcRenderer.on('app_version', (event, arg) => {
+    //   ipcRenderer.removeAllListeners('app_version');
+    //   version.innerText = 'Version ' + arg.version;
+    // });
+    // ipcRenderer.on('update_available', () => {
+    //   ipcRenderer.removeAllListeners('update_available');
+    //   message.innerText = 'A new update is available. Downloading now...';
+    //   notification.classList.remove('hidden');
+    // });
+    // ipcRenderer.on('update_downloaded', () => {
+    //   ipcRenderer.removeAllListeners('update_downloaded');
+    //   message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
+    //   restartButton.classList.remove('hidden');
+    //   notification.classList.remove('hidden');
+    // });
+
+    // function closeNotification() {
+    //   notification.classList.add('hidden');
+    // }
+    // function restartApp() {
+    //   ipcRenderer.send('restart_app');
+    // }
+  </script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Electron Auto Update Example</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+  <body>
+    <p id="version"></p>
+    <div class="container">
+      <h1>Nova Prehliadka</h1>
+      <h2>Osobne udaje 1</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <fieldset>
+            <legend>Je totoznost znama?</legend>
+
+            <input type="radio" id="identityYes" name="identity" value="yes" checked>
+            <label for="identityYes">Ano</label>
+
+            <input type="radio" id="identityNo" name="identity" value="no">
+            <label for="identityNo">Nie</label>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <legend>Pohlavie</legend>
+
+            <input type="radio" id="male" name="sex" value="m" checked>
+            <label for="male">Muzske</label>
+
+            <input type="radio" id="female" name="sex" value="f">
+            <label for="female">Zenske</label>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <legend>Dieta</legend>
+            <select>
+              <option>ziadne</option>
+              <option>1</option>
+              <option>2</option>
+            </select>
+          </fieldset>
+        </div>  
+
+        <div class="grid-item">
+          <fieldset>
+            <input id="birthNumber">
+            <legend for="birthNumber">Rodne cislo</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <input id="name">
+            <legend for="name">Meno</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <input id="surname">
+            <legend for="surname">Priezvisko</legend>
+          </fieldset>
+        </div>   
+
+        <div class="grid-item">
+          <fieldset>
+            <input id="birthname">
+            <legend for="birthname">Rodne priezvisko</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <legend for="citizenship">Statne obcianstvo</legend>
+            <select id="citizenship">
+              <option>slovenske</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <select id="insurance">
+              <option>Dovera</option>
+            </select>
+            <legend for="insurance">Poistovna</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <select id="nationality">
+              <option>slovenska</option>
+            </select>
+            <legend for="nationality">Narodnost</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <select id="educationalAttain">
+              <option>zakladne</option>
+              <option>vysokoskolske 1. stupna</option>
+              <option>vysokoskolske 2. stupna</option>
+            </select>
+            <legend for="educationalAttain">Dosiahnute vzdelanie</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <select id="job">
+              <option>IT</option>
+            </select>
+            <legend for="job">Zamestnanie</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <select id="maritalStatus">
+              <option>zenaty / vydata</option>
+            </select>
+            <legend for="maritalStatus">Rodinny stav</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <input id="birthNumberHW">
+            <legend for="birthNumberHW">Rodne cislo manzela/manzelky</legend>
+          </fieldset>
+        </div>
+
+        <div class="grid-item">
+          <fieldset>
+            <select id="doctor">
+
+            </select>
+            <legend for="doctor">Osetrujuci lekar</legend>
+          </fieldset>
+        </div> 
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item-bottom">
+          <fieldset>
+            <button>Zrusit</button>
+          </fieldset>
+        </div>
+
+        <div class="grid-item-bottom">
+          <fieldset>
+            <button>Moznosti</button>
+          </fieldset>
+        </div>
+
+        <div class="grid-item-bottom">
+          <fieldset>
+            <button>Dalej</button>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
 </html>

@@ -1,45 +1,110 @@
-const { app, BrowserWindow } = require('electron')
+const { app, dialog, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const { autoUpdater } = require('electron-updater')
 const log = require('electron-log')
 
 log.transports.file.resolvePath = () => path.join('C:/development/ePrehliadky/ePrehliadky-electron-demo/', '/logs/main.log');
-log.log("Application version = " + app.getVersion())
-
-let win;
+log.log("Application version = " + app.getVersion());
+let mainWindow ;
 
 function createWindow() {
-  win = new BrowserWindow({width:300, height:400})
+  // Create the browser window.
+  mainWindow  = new BrowserWindow({
+    width:1200, 
+    height:800,
+    webPreferences: {
+      contextIsolation: true, // this is the default in Electron >= 12. Must be true for the context bridge API to work.
+      nodeIntegration: false, // this is the default in Electron >= 5
+      preload: path.join(__dirname, 'preload.js')
+    },
+    autoHideMenuBar: true
+  });
 
-  win.loadFile(path.join(__dirname, 'index.html'))
+  // Load the index.html of the app.
+  mainWindow .loadFile(path.join(__dirname, 'index.html'));
+
+  // Open the DevTools by default. You can open them via "View ➡ Toggle Developer Tools".
+  // mainWindow.webContents.openDevTools()
+
+  // autoUpdater.checkForUpdatesAndNotify()
+  autoUpdater.checkForUpdates();
 }
 
-autoUpdater.on("checking-for-update", () => {
-  log.info("Checking for update...");
-})
 
-autoUpdater.on("update-available", (info) => {
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.whenReady().then(createWindow);
+
+// Quit when all windows are closed, except on macOS. There, it's common
+// for applications and their menu bar to stay active until the user quits
+// explicitly with Cmd + Q.
+app.on("window-all-closed", () => {
+  app.quit();
+});
+
+// Handle form "submission" by printing out the name passed via IPC to the Node.js console,
+// and then sending back an IPC message indicating that it was successful.
+// ipcMain.on('print-name', (event, name) => {
+//   console.log(`Name passed from the renderer: ${name}`)
+//   event.reply('name-status', 'Printed name to the Node.js console!')
+// })
+
+ipcMain.handle('getAppVersion', () => {
+  return app.getVersion();
+});
+
+// ------------ AUTO-UPDATER SECTION ------------
+
+autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
+	const dialogOpts = {
+		type: 'info',
+		buttons: ['Ok'],
+		title: 'Application Update',
+		message: process.platform === 'win32' ? releaseNotes : releaseName,
+		detail: 'A new version is being downloaded.'
+	}
   log.info("Update available.");
+	dialog.showMessageBox(dialogOpts, (response) => {
+
+	});
 })
 
-autoUpdater.on("update-not-available", (info) => {
-  log.info("Update not available.");
-})
-
-autoUpdater.on("error", (err) => {
-  log.info("Error in auto-update. " + err);
-})
-
-autoUpdater.on("download-progress", (progressTrack) => {
-  log.info("Download progress");
-  log.info(progressTrack);
-})
-
-autoUpdater.on("update-downloaded", (info) => {
+autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) => {
+	const dialogOpts = {
+		type: 'info',
+		buttons: ['Restart', 'Later'],
+		title: 'Application Update',
+		message: process.platform === 'win32' ? releaseNotes : releaseName,
+		detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+	};
   log.info("Update downloaded.");
-})
+	dialog.showMessageBox(dialogOpts).then((returnValue) => {
+		if (returnValue.response === 0) autoUpdater.quitAndInstall()
+	})
+});
 
-app.on('ready', () => {
-  createWindow()
-  autoUpdater.checkForUpdatesAndNotify()
-})
+// autoUpdater.on("checking-for-update", () => {
+//   log.info("Checking for update...");
+// })
+
+// autoUpdater.on("update-available", (info) => {
+//   log.info("Update available.");
+// })
+
+// autoUpdater.on("update-not-available", (info) => {
+//   log.info("Update not available.");
+// })
+
+// autoUpdater.on("error", (err) => {
+//   log.info("Error in auto-update. " + err);
+// })
+
+// autoUpdater.on("download-progress", (progressTrack) => {
+//   log.info("Download progress");
+//   log.info(progressTrack);
+// })
+
+// autoUpdater.on("update-downloaded", (info) => {
+//   log.info("Update downloaded.");
+// })
