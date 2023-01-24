@@ -65,9 +65,9 @@ ipcMain.handle('getAppVersion', () => {
 
 // ------------ AUTO-UPDATER SECTION ------------
 
-// autoUpdater.on("checking-for-update", () => {
-//   log.info("Checking for update...");
-// })
+autoUpdater.on("checking-for-update", () => {
+  log.info("Checking for update...");
+})
 
 autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
 	const dialogOpts = {
@@ -84,9 +84,9 @@ autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
   });
 })
 
-// autoUpdater.on("update-not-available", (info) => {
-//   log.info("Update not available.");
-// })
+autoUpdater.on("update-not-available", (info) => {
+  log.info("Update not available.");
+})
 
 // autoUpdater.on("error", (err) => {
 //   log.info("Error in auto-update. " + err);
