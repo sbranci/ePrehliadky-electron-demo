@@ -1,6 +1,6 @@
 {
   "name": "eprehliadky-electron-demo",
-  "version": "8.0.14",
+  "version": "8.0.19",
   "description": "",
   "main": "src/main.js",
   "scripts": {

@@ -5,176 +5,196 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Electron Auto Update Example</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
+    <!-- <link rel="stylesheet" href="../scss/all.scss"> -->
+    <!-- <style>
+      .c-step.v-isolated {
+          display: none;
+      }
+  
+      .c-step.v-isolated.v-active {
+          display: block;
+      }
+  
+      .c-step.v-isolated > .d-header > .d-navigation {
+          display: none;
+      }
+    </style> -->
   </head>
   <body>
     <p id="version"></p>
-    <div class="container">
+    <a href="http://localhost:20080" class="d-link">Web</a>
+
+    <form action="#" id="ipcForm2">
+      First name:<br>
+      <input type="text" name="firstname" id="firstname" value="John">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname" id="lastname" value="Smith">
+      <br><br>
+      <input id="submit" type="submit" value="submit">
+    </form>
+
+    <p id="response"></p>
+
+    <!-- <div class="container">
       <h1>Nova Prehliadka</h1>
       <h2>Osobne udaje 1</h2>
-      <div class="grid-container">
-        <div class="grid-item">
-          <fieldset>
-            <legend>Je totoznost znama?</legend>
 
-            <input type="radio" id="identityYes" name="identity" value="yes" checked>
-            <label for="identityYes">Ano</label>
+      <form name="ipcForm" onSubmit="JavaScript:sendForm(event)">
+        <div class="grid-container">
+          <div class="grid-item">
+            <fieldset>
+              <legend>Je totoznost znama?</legend>
+  
+              <input type="radio" id="identityYes" name="identity" value="yes" checked>
+              <label for="identityYes">Ano</label>
+  
+              <input type="radio" id="identityNo" name="identity" value="no">
+              <label for="identityNo">Nie</label>
+            </fieldset>
+          </div>
+  
+          <div class="grid-item">
+            <fieldset>
+              <legend>Pohlavie</legend>
+  
+              <input type="radio" id="male" name="sex" value="m" checked>
+              <label for="male">Muzske</label>
+  
+              <input type="radio" id="female" name="sex" value="f">
+              <label for="female">Zenske</label>
+            </fieldset>
+          </div>
+  
+          <div class="grid-item">
+            <fieldset>
+              <legend>Dieta</legend>
+              <select>
+                <option>ziadne</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </fieldset>
+          </div>  
+  
+          <div class="grid-item">
+            <fieldset>
+              <input id="birthNumber">
+              <legend for="birthNumber">Rodne cislo</legend>
+            </fieldset>
+          </div>
+  
+          <div class="grid-item">
+            <fieldset>
+              <input type="text" name="firstname" id="firstname" value="John">
+              <legend for="firstname">Meno</legend>
+            </fieldset>
+          </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <input type="text" name="lastname" id="lastname" value="Smith">
+              <legend for="lastname">Priezvisko</legend>
+            </fieldset>
+            </div>   
+  
+            <div class="grid-item">
+            <fieldset>
+              <input id="birthname">
+              <legend for="birthname">Rodne priezvisko</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <legend for="citizenship">Statne obcianstvo</legend>
+              <select id="citizenship">
+                <option>slovenske</option>
+                <option>ziadne</option>
+              </select>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <select id="insurance">
+                <option>Dovera</option>
+                <option>Vseobecna</option>
+                <option>Union</option>
+              </select>
+              <legend for="insurance">Poistovna</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <select id="nationality">
+                <option>slovenska</option>
+                <option>ina</option>
+              </select>
+              <legend for="nationality">Narodnost</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <select id="educationalAttain">
+                <option>zakladne</option>
+                <option>vysokoskolske 1. stupna</option>
+                <option>vysokoskolske 2. stupna</option>
+              </select>
+              <legend for="educationalAttain">Dosiahnute vzdelanie</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <select id="job">
+                <option>IT</option>
+              </select>
+              <legend for="job">Zamestnanie</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <select id="maritalStatus">
+                <option>zenaty / vydata</option>
+                <option>single</option>
+              </select>
+              <legend for="maritalStatus">Rodinny stav</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <input id="birthNumberHW">
+              <legend for="birthNumberHW">Rodne cislo manzela/manzelky</legend>
+            </fieldset>
+            </div>
+  
+            <div class="grid-item">
+            <fieldset>
+              <select id="doctor">
+  
+              </select>
+              <legend for="doctor">Osetrujuci lekar</legend>
+            </fieldset>
+            </div> 
 
-            <input type="radio" id="identityNo" name="identity" value="no">
-            <label for="identityNo">Nie</label>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <legend>Pohlavie</legend>
-
-            <input type="radio" id="male" name="sex" value="m" checked>
-            <label for="male">Muzske</label>
-
-            <input type="radio" id="female" name="sex" value="f">
-            <label for="female">Zenske</label>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <legend>Dieta</legend>
-            <select>
-              <option>ziadne</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-            </select>
-          </fieldset>
-        </div>  
-
-        <div class="grid-item">
-          <fieldset>
-            <input id="birthNumber">
-            <legend for="birthNumber">Rodne cislo</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <input id="name">
-            <legend for="name">Meno</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <input id="surname">
-            <legend for="surname">Priezvisko</legend>
-          </fieldset>
-        </div>   
-
-        <div class="grid-item">
-          <fieldset>
-            <input id="birthname">
-            <legend for="birthname">Rodne priezvisko</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <legend for="citizenship">Statne obcianstvo</legend>
-            <select id="citizenship">
-              <option>slovenske</option>
-              <option>ziadne</option>
-            </select>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <select id="insurance">
-              <option>Dovera</option>
-              <option>Vseobecna</option>
-              <option>Union</option>
-            </select>
-            <legend for="insurance">Poistovna</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <select id="nationality">
-              <option>slovenska</option>
-              <option>ina</option>
-            </select>
-            <legend for="nationality">Narodnost</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <select id="educationalAttain">
-              <option>zakladne</option>
-              <option>vysokoskolske 1. stupna</option>
-              <option>vysokoskolske 2. stupna</option>
-            </select>
-            <legend for="educationalAttain">Dosiahnute vzdelanie</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <select id="job">
-              <option>IT</option>
-            </select>
-            <legend for="job">Zamestnanie</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <select id="maritalStatus">
-              <option>zenaty / vydata</option>
-              <option>single</option>
-            </select>
-            <legend for="maritalStatus">Rodinny stav</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <input id="birthNumberHW">
-            <legend for="birthNumberHW">Rodne cislo manzela/manzelky</legend>
-          </fieldset>
-        </div>
-
-        <div class="grid-item">
-          <fieldset>
-            <select id="doctor">
-
-            </select>
-            <legend for="doctor">Osetrujuci lekar</legend>
-          </fieldset>
-        </div> 
-      </div>
-
-      <div class="grid-container">
-        <div class="grid-item-bottom">
-          <fieldset>
-            <button>Zrusit</button>
-          </fieldset>
-        </div>
-
-        <div class="grid-item-bottom">
-          <fieldset>
-            <button>Moznosti</button>
-          </fieldset>
-        </div>
-
-        <div class="grid-item-bottom">
-          <fieldset>
-            <button>Dalej</button>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-
+            <div class="grid-container">
+              <div class="grid-item">
+                <fieldset>
+                  <button id="submit">Odoslať</button>
+                  <input type="submit" value="Odoslať">
+                </fieldset>
+              </div>
+            </div>
+  
+          </div>
+        </form>
+      </div> -->
     <script src="./renderer.js"></script>
   </body>
 </html>

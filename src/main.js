@@ -1,4 +1,4 @@
-const { app, dialog, BrowserWindow, ipcMain, Notification  } = require('electron')
+const { app, dialog, BrowserWindow, ipcMain, Notification, Tray } = require('electron')
 const path = require('path')
 const { autoUpdater } = require('electron-updater')
 const log = require('electron-log')
@@ -10,10 +10,9 @@ const NOTIFICATION_TITLE = 'Update Notification'
 const NOTIFICATION_BODY = 'A new version is being downloaded.'
 
 function createWindow() {
-  // Create the browser window.
   mainWindow  = new BrowserWindow({
-    width: 1000, 
-    height: 1000,
+    width: 1400, 
+    height: 900,
     webPreferences: {
       contextIsolation: true, // this is the default in Electron >= 12. Must be true for the context bridge API to work.
       nodeIntegration: false, // this is the default in Electron >= 5
@@ -24,12 +23,13 @@ function createWindow() {
 
   // Load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  // mainWindow.loadFile(path.join(__dirname, 'inspection.html'));
 
-  mainWindow.on('show', () => {
-    setTimeout(() => {
-      win.focus();
-    }, 200);
-  });
+  tray = new Tray('orbit.jpg')
+  tray.setToolTip('Tray for electron js')
+  tray.on("click", () => {
+    mainWindow.isVisible()?mainWindow.hide():mainWindow.show()
+  })
 
   log.log("-----------------------------------------");
   log.log("Application version = " + app.getVersion());
@@ -50,12 +50,6 @@ app.on("window-all-closed", () => {
   app.quit();
 });
 
-// Handle form "submission" by printing out the name passed via IPC to the Node.js console,
-// and then sending back an IPC message indicating that it was successful.
-// ipcMain.on('print-name', (event, name) => {
-//   console.log(`Name passed from the renderer: ${name}`)
-//   event.reply('name-status', 'Printed name to the Node.js console!')
-// })
 
 ipcMain.handle('getAppVersion', () => {
   return app.getVersion();

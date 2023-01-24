@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="sk-SK" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ed055d"> -->
+    <link rel="stylesheet" href="../scss/all.scss">
+    <meta name="msapplication-TileColor" content="#ed055d">
+    <meta name="theme-color" content="#ffffff">
+    <title>Nová prehliadka</title>
+    <!-- <meta name="csrf-param" content="_csrf-main">
+<meta name="csrf-token" content="GnMN9SfrM6KZrK9NxZeIXG61UgemFFZWvyR_kwSUm7BINWGUfrheweDPyyui4dgaPcYkY-dmFSOKaQm-ZqXygA==">
+ -->
+    <!-- <link rel="stylesheet" href="/css/site.css?v=1674566742"> -->
+
+</head>
+<body class="s-sk-SK">
+
+<main role="main" class="c-main">
+    <input class="d-check is_hidden" type="checkbox" id="main">
+    <div class="d-left">
+        <label for="main" class="d-control">
+            <span class="d-icon"></span>
+            <span class="is_readeronly">zobraziť/skryť</span>
+        </label>
+        <nav class="c-navigation v-left">
+            <ul class="d-container">
+                <li class="d-item ">
+                    <!-- <a href="/inspection/index" class="d-link"></a> -->
+                    <a href="http://localhost:20080/inspection/index" class="d-link">
+                        <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#home"></use>
+                        </svg>
+                        Prehľad
+                    </a>
+                </li>
+                <li class="d-item ">
+                                            <a href="/inspection/index?inspectionStatusCode=R" class="d-link">
+                            <svg class="c-icons v-menu">
+                                <use xlink:href="/svg/icons.svg#incomplete"></use>
+                            </svg>
+                            Rozpracované
+                        </a>
+                                        </li>
+                <li class="d-item ">
+                    <a href="/inspection/index?inspectionStatusCode=C" class="d-link">
+                        <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#hourglass"></use>
+                        </svg>
+                        Čakajúce
+                    </a>
+                </li>
+                <li class="d-item ">
+                    <a href="/inspection/index?inspectionStatusCode=K" class="d-link">
+                         <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#confirmed"></use>
+                        </svg>
+                        Schválené
+                    </a>
+                </li>
+                <li class="d-item ">
+                    <a href="/inspection/index?inspectionStatusCode=O" class="d-link">
+                         <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#review"></use>
+                        </svg>
+                        Revidované
+                    </a>
+                </li>
+                <li class="d-item ">
+                    <a href="/inspection/index?inspectionStatusCode=S" class="d-link">
+                         <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#canceled"></use>
+                        </svg>
+                        Stornované
+                    </a>
+                </li>
+                <li class="d-item ">
+                    <a href="/inspection/index?inspectionStatusCode=R&dissection=1" class="d-link">
+                         <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#scalpel"></use>
+                        </svg>
+                        Pitvy
+                    </a>
+                </li>
+                <li class="d-item">
+                    <a href="#" class="d-link">
+                         <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#stethoscope"></use>
+                        </svg>
+                        Raritné diagnózy
+                    </a>
+                </li>
+                <li class="d-item">
+                    <a href="#" class="d-link">
+                         <svg class="c-icons v-menu">
+                             <use xlink:href="/svg/icons.svg#clock"></use>
+                        </svg>
+                        História
+                    </a>
+                </li>
+                <li class="d-item">
+                    <a href="/inspection/create" class="c-buttons v-green v-equal">
+                        <svg class="c-icons v-l v-nomargin">
+                             <use xlink:href="/svg/icons.svg#new"></use>
+                        </svg>
+                        <span class="is_readeronly">Nová prehliadka</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="d-right">
+        <div class="d-top">
+            <div class="c-logo">
+                <img class="d-pictogram" src="/svg/logo.svg" alt="ePrehliadky piktogram">ePrehliadky
+            </div>
+            <nav class="c-navigation v-top">
+                <ul class="d-container">
+                                            <li class="d-item">
+                            <a href="#" class="d-link">
+                                <svg class="c-icons">
+                                    <use xlink:href="/svg/icons.svg#user"></use>
+                                </svg>
+                                Moj profil (prehliadajuci@lekar)
+                            </a>
+                        </li>
+                        <li class="d-item">
+                            <form class="d-link" action="/site/logout" method="post">
+<input type="hidden" name="_csrf-main" value="GnMN9SfrM6KZrK9NxZeIXG61UgemFFZWvyR_kwSUm7BINWGUfrheweDPyyui4dgaPcYkY-dmFSOKaQm-ZqXygA==">                            <button name="logout">
+                                <svg class="c-icons">
+                                    <use xlink:href="/svg/icons.svg#logout"></use>
+                                </svg>
+                                Odhlásiť
+                            </button>
+                            </form>                        </li>
+                        
+                </ul>
+            </nav>
+        </div>
+        <div class="d-center">
+            
+
+<h1 class="b-typo-h1 v-center">Nová prehliadka</h1>
+
+<style>
+    .c-step.v-isolated {
+        display: none;
+    }
+
+    .c-step.v-isolated.v-active {
+        display: block;
+    }
+
+    .c-step.v-isolated > .d-header > .d-navigation {
+        display: none;
+    }
+</style>
+
+<form id="w0" class="c-tabs v-invisible" action="/inspection/create" method="post">
+<input type="hidden" name="_csrf-main" value="GnMN9SfrM6KZrK9NxZeIXG61UgemFFZWvyR_kwSUm7BINWGUfrheweDPyyui4dgaPcYkY-dmFSOKaQm-ZqXygA==">
+    <input class="d-radio is_hidden" type="radio" id="sectionNewExamination" name="tabs1" checked="checked" />
+    <ul class="d-navigation">
+        <li class="d-item">
+            <label class="d-label" for="section1tab1">Nová prehliadka</label>
+        </li>
+    </ul>
+    <div class="d-content">
+        <div class="d-item">
+                    </div>
+        <div id="inspectionStepsWrapper" class="d-item">
+            <div class="c-step v-isolated v-active">
+                <input class="d-check is_hidden" type="checkbox" id="showsection1tab1" checked="">
+                <div class="d-header">
+                    <h2 class="b-typo-h2">Osobné udaje 1</h2>
+                    <label for="showsection1tab1" class="d-navigation">
+                        <span class="d-icon"></span>
+                        <span class="is_readeronly">zobraziť/skryť</span>
+                    </label>
+                </div>
+                <div class="d-content">
+                    <div class="c-forms">
+                        <div class="d-form">
+                            <div class="d-section">
+                                <fieldset class="d-formgroup v-radio field-inspection-is_body_identified">
+<legend class="d-legend"><label class="d-label">Je totožnosť známa?</label></legend><input type="hidden" name="Inspection[is_body_identified]" value=""><label class="d-label"><input type="radio" class="d-field" name="Inspection[is_body_identified]" value="1"> Áno</label>
+<label class="d-label"><input type="radio" class="d-field" name="Inspection[is_body_identified]" value="0" checked> Nie</label><div class="help-block"></div>
+</fieldset>
+                                <fieldset class="d-formgroup v-radio field-inspection-sex_id">
+<legend class="d-legend"><label class="d-label">Pohlavie</label></legend><input type="hidden" name="Inspection[sex_id]" value=""><label class="d-label"><input type="radio" class="d-field" name="Inspection[sex_id]" value="1"> Muž</label>
+<label class="d-label"><input type="radio" class="d-field" name="Inspection[sex_id]" value="2"> Žena</label><div class="help-block"></div>
+</fieldset>
+                                <fieldset class="d-formgroup v-radio field-inspection-is_child">
+<legend class="d-legend"><label class="d-label">Dieťa</label></legend><input type="hidden" name="Inspection[is_child]" value=""><label class="d-label"><input type="radio" class="d-field" name="Inspection[is_child]" value="1"> Áno</label>
+<label class="d-label"><input type="radio" class="d-field" name="Inspection[is_child]" value="0"> Nie</label><div class="help-block"></div>
+</fieldset>
+                                <div class="d-formgroup v-text v-divided field-inspection-birth_number">
+<label class="d-label" for="inspection-birth_number">Rodné číslo</label><input type="text" id="inspection-birth_number" class="d-field" name="Inspection[birth_number]" maxlength="10"><button id="preloadByBirthNumber" type="button" class="c-buttons v-green">Doplniť</button>
+</div>
+                                <div class="d-formgroup v-text field-inspection-first_name">
+<label class="d-label" for="inspection-first_name">Meno</label>
+<input type="text" id="inspection-first_name" class="d-field" name="Inspection[first_name]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-last_name">
+<label class="d-label" for="inspection-last_name">Priezvisko</label>
+<input type="text" id="inspection-last_name" class="d-field" name="Inspection[last_name]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-last_name_given">
+<label class="d-label" for="inspection-last_name_given">Rodné priezvisko</label>
+<input type="text" id="inspection-last_name_given" class="d-field" name="Inspection[last_name_given]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-citizenship_code">
+<label class="d-label" for="inspection-citizenship_code">Štátne občianstvo</label>
+<select id="inspection-citizenship_code" class="d-field" name="Inspection[citizenship_code]">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-select field-inspection-health_insurance_organization_id">
+<label class="d-label" for="inspection-health_insurance_organization_id">Poisťovňa</label>
+<select id="inspection-health_insurance_organization_id" class="d-field" name="Inspection[health_insurance_organization_id]">
+<option value="">Prosím zvoľte</option>
+<option value="24">Dôvera</option>
+<option value="25">VŠZP</option>
+<option value="27">Union</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-nationality_id">
+<label class="d-label" for="inspection-nationality_id">Národnosť</label>
+<select id="inspection-nationality_id" class="d-field" name="Inspection[nationality_id]">
+<option value="0">Nezistená</option>
+<option value="1">Česká</option>
+<option value="2">Slovenská</option>
+<option value="3">Moravská</option>
+<option value="4">Sliezská</option>
+<option value="5">Maďarská</option>
+<option value="6">Rómska</option>
+<option value="7">Poľská</option>
+<option value="8">Nemecká</option>
+<option value="9">Rusínska</option>
+<option value="10">Ukrajinská</option>
+<option value="11">Ruská</option>
+<option value="12">Židovská</option>
+<option value="13">Grécka</option>
+<option value="14">Bulharská</option>
+<option value="15">Rumunská</option>
+<option value="16">Rakúska</option>
+<option value="17">Vietnamská</option>
+<option value="18">Chorvátska</option>
+<option value="19">Srbská</option>
+<option value="20">Albánska</option>
+<option value="22">Čínska</option>
+<option value="23">Talianska</option>
+<option value="24">Írska</option>
+<option value="25">Kórejská</option>
+<option value="26">Kanadská</option>
+<option value="27">Anglická</option>
+<option value="28">Iránska</option>
+<option value="29">Francúzska</option>
+<option value="30">Turecká</option>
+<option value="99">Iná</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-select field-inspection-education_level_id">
+<label class="d-label" for="inspection-education_level_id">Dosiahnuté vzdelanie</label>
+<select id="inspection-education_level_id" class="d-field" name="Inspection[education_level_id]">
+<option value="">Prosím zvoľte</option>
+<option value="0">Bez vzdelania</option>
+<option value="1">Základné</option>
+<option value="2">Stredné bez maturity</option>
+<option value="3">Stredné s maturitou</option>
+<option value="4">Vysokoškolské</option>
+<option value="9">Nezistené</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-occupation_id">
+<label class="d-label" for="inspection-occupation_id">Zamestnanie</label>
+<select id="inspection-occupation_id" class="d-field" name="Inspection[occupation_id]">
+<option value="0">nezistené</option>
+<option value="1">dôstoj.oz.síl</option>
+<option value="2">poddôstoj.</option>
+<option value="3">ostat.ozb.sily</option>
+<option value="11">zákonodar.</option>
+<option value="12">riad.prac.-obchod</option>
+<option value="13">riad.prac.-výroba</option>
+<option value="14">riad.prac.-služ.</option>
+<option value="21">špec.-tech.</option>
+<option value="22">špec.-zdravot.</option>
+<option value="23">učitelia</option>
+<option value="24">špec.-admin.</option>
+<option value="25">špec.-IKT</option>
+<option value="26">špec.-právo a i.</option>
+<option value="31">Technici</option>
+<option value="32">Odb.prac.-zdravot.</option>
+<option value="33">odb.prac.-admin.</option>
+<option value="34">odb.prac.-právo a i.</option>
+<option value="35">technici-IKT</option>
+<option value="41">všeob.admin.prac.</option>
+<option value="42">admin.prac.-zák.cent.</option>
+<option value="43">admin.prac.záznam</option>
+<option value="44">ostat.pomoc.admin.</option>
+<option value="51">prac.-os.služby</option>
+<option value="52">predavači</option>
+<option value="53">prac.-os. star.</option>
+<option value="54">prac.-ver.ochrana</option>
+<option value="61">kvalif.prac.-poľnoh.</option>
+<option value="62">kvalif.prac.-les.a i.</option>
+<option value="63">farmári,ryb. a i.</option>
+<option value="71">kvalif.staveb.rob.</option>
+<option value="72">kvalif.robot.hut.a i.</option>
+<option value="73">umel.remes.</option>
+<option value="74">elektrikári</option>
+<option value="75">spracov.potr.výr.</option>
+<option value="81">operátori stac.strojov</option>
+<option value="82">montáž.rob.</option>
+<option value="83">vodiči</option>
+<option value="91">upratovači</option>
+<option value="92">pomoc.prac.-poľnoh.a i.</option>
+<option value="93">pomoc.prac.-ťažba a i.</option>
+<option value="94">pomoc.prac.-príp.jedla</option>
+<option value="95">poulič.predavači</option>
+<option value="96">prac.-likv.odpadu</option>
+<option value="99">neaplikovateľné</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-select field-inspection-marital_status_id">
+<label class="d-label" for="inspection-marital_status_id">Rodinný stav</label>
+<select id="inspection-marital_status_id" class="d-field" name="Inspection[marital_status_id]">
+<option value="">Prosím zvoľte</option>
+<option value="0">nezistený</option>
+<option value="1">slobodný - slobodná</option>
+<option value="2">ženatý - vydatá</option>
+<option value="3">rozvedený - rozvedená</option>
+<option value="4">vdovec - vdova</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-birth_number_survivor">
+<label class="d-label" for="inspection-birth_number_survivor">Rodné číslo pozostalého manžela/manželky</label>
+<input type="text" id="inspection-birth_number_survivor" class="d-field" name="Inspection[birth_number_survivor]" maxlength="10">
+
+<div class="help-block"></div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-step v-isolated">
+                <input class="d-check is_hidden" type="checkbox" id="showsection1tab2" checked="">
+                <div class="d-header">
+                    <h2 class="b-typo-h2">Osobné udaje 2</h2>
+                    <label for="showsection1tab2" class="d-navigation">
+                        <span class="d-icon"></span>
+                        <span class="is_readeronly">zobraziť/skryť</span>
+                    </label>
+                </div>
+                <div class="d-content">
+                    <div class="c-forms">
+                        <div class="d-form">
+
+                            <h3 class="b-typo-h3">Miesto a dátum narodenia</h3>
+                            <div class="d-section">
+
+                                <div class="d-formgroup v-text field-inspection-birth_state_code">
+<label class="d-label" for="inspection-birth_state_code">Štát narodenia</label>
+<select id="inspection-birth_state_code" class="d-field" name="Inspection[birth_state_code]" data-ui-address-group="step2">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-birth_district_code">
+<label class="d-label" for="inspection-birth_district_code">Okres narodenia</label>
+<select id="inspection-birth_district_code" class="d-field" name="Inspection[birth_district_code]" data-ui-address-group="step2" data-ui-element="district_code">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-birth_municipality_code">
+<label class="d-label" for="inspection-birth_municipality_code">Obec narodenia</label>
+<select id="inspection-birth_municipality_code" class="d-field" name="Inspection[birth_municipality_code]" data-ui-address-group="step2" data-ui-element="municipality_code">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-birth_date">
+<label class="d-label" for="inspection-birth_date">Dátum narodenia</label>
+<input type="date" id="inspection-birth_date" class="d-field" name="Inspection[birth_date]">
+
+<div class="help-block"></div>
+</div>
+                            </div>
+
+                            <h3 class="b-typo-h3">Trvalý pobyt</h3>
+                            <div class="d-section">
+
+                                <div class="d-formgroup v-text field-inspection-permanent_residence_state_code">
+<label class="d-label" for="inspection-permanent_residence_state_code">Štát</label>
+<select id="inspection-permanent_residence_state_code" class="d-field" name="Inspection[permanent_residence_state_code]" data-ui-address-group="step2section1">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-permanent_residence_district_code">
+<label class="d-label" for="inspection-permanent_residence_district_code">Okres</label>
+<select id="inspection-permanent_residence_district_code" class="d-field" name="Inspection[permanent_residence_district_code]" data-ui-address-group="step2section1" data-ui-element="district_code">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-permanent_residence_municipality_code">
+<label class="d-label" for="inspection-permanent_residence_municipality_code">Obec</label>
+<select id="inspection-permanent_residence_municipality_code" class="d-field" name="Inspection[permanent_residence_municipality_code]" data-ui-address-group="step2section1" data-ui-element="municipality_code">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-permanent_residence_street">
+<label class="d-label" for="inspection-permanent_residence_street">Ulica</label>
+<input type="text" id="inspection-permanent_residence_street" class="d-field" name="Inspection[permanent_residence_street]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-permanent_residence_house_number">
+<label class="d-label" for="inspection-permanent_residence_house_number">Súpisné číslo</label>
+<input type="text" id="inspection-permanent_residence_house_number" class="d-field" name="Inspection[permanent_residence_house_number]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-permanent_residence_land_registry_number_id">
+<label class="d-label" for="inspection-permanent_residence_land_registry_number_id">Orientačné číslo</label>
+<input type="text" id="inspection-permanent_residence_land_registry_number_id" class="d-field" name="Inspection[permanent_residence_land_registry_number_id]">
+
+<div class="help-block"></div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="childSection" class="c-step v-isolated v-skip">
+                <input class="d-check is_hidden" type="checkbox" id="showsection1tab3" checked="">
+                <div class="d-header">
+                    <h2 class="b-typo-h2">Úmrtie (dieťa do 1 roka)</h2>
+                    <label for="showsection1tab3" class="d-navigation">
+                        <span class="d-icon"></span>
+                        <span class="is_readeronly">zobraziť/skryť</span>
+                    </label>
+                </div>
+                <div class="d-content">
+                    <div class="c-forms">
+                        <div class="d-form">
+
+                            <div class="d-section">
+                                <div class="d-formgroup v-text field-inspection-death_datetime">
+<label class="d-label" for="inspection-death_datetime">Dátum a čas úmrtia</label>
+<input type="datetime-local" id="inspection-death_datetime" class="d-field" name="Inspection[death_datetime]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-birth_weight_grams">
+<label class="d-label" for="inspection-birth_weight_grams">Pôrodná hmotnosť v gramoch</label>
+<input type="text" id="inspection-birth_weight_grams" class="d-field" name="Inspection[birth_weight_grams]">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-child_lifespan_hours">
+<label class="d-label" for="inspection-child_lifespan_hours">Dĺžka života v hodinách</label>
+<input type="text" id="inspection-child_lifespan_hours" class="d-field" name="Inspection[child_lifespan_hours]">
+
+<div class="help-block"></div>
+</div>
+                                <fieldset class="d-formgroup v-radio field-inspection-is_father_husband">
+<legend class="d-legend"><label class="d-label">Otec dieťaťa je manželom matky</label></legend><input type="hidden" name="Inspection[is_father_husband]" value=""><label class="d-label"><input type="radio" class="d-field" name="Inspection[is_father_husband]" value="1"> Áno</label>
+<label class="d-label"><input type="radio" class="d-field" name="Inspection[is_father_husband]" value="0"> Nie</label><div class="help-block"></div>
+</fieldset>                            </div>
+
+                            <h3 class="b-typo-h3">Miesto úmrtia</h3>
+
+                            <div class="d-section">
+
+                                <div class="d-formgroup v-text field-inspection-death_state_code">
+<label class="d-label" for="inspection-death_state_code">Štát</label>
+<select id="inspection-death_state_code" class="d-field" name="Inspection[death_state_code]" data-ui-address-group="step3section1">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-death_district_code">
+<label class="d-label" for="inspection-death_district_code">Okres</label>
+<select id="inspection-death_district_code" class="d-field" name="Inspection[death_district_code]" data-ui-address-group="step3section1" data-ui-element="district_code">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-death_municipality_code">
+<label class="d-label" for="inspection-death_municipality_code">Obec</label>
+<select id="inspection-death_municipality_code" class="d-field" name="Inspection[death_municipality_code]" data-ui-address-group="step3section1" data-ui-element="municipality_code">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+
+                                <div class="d-formgroup v-select field-inspection-child_death_location_id">
+<label class="d-label" for="inspection-child_death_location_id">Miesto úmrtia</label>
+<select id="inspection-child_death_location_id" class="d-field" name="Inspection[child_death_location_id]">
+<option value="1">v ústave</option>
+<option value="2">doma</option>
+<option value="3">inde</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-step v-isolated">
+                <input class="d-check is_hidden" type="checkbox" id="showsection1tab4" checked="">
+                <div class="d-header">
+                    <h2 class="b-typo-h2">Príčina smrti</h2>
+                    <label for="showsection1tab4" class="d-navigation">
+                        <span class="d-icon"></span>
+                        <span class="is_readeronly">zobraziť/skryť</span>
+                    </label>
+                </div>
+                <div class="d-content">
+                    <div class="c-forms">
+                        <div class="d-form">
+
+                            <div class="d-section">
+
+                                <div class="d-formgroup v-text field-inspection-immediate_cause_of_death_disease_code">
+<label class="d-label" for="inspection-immediate_cause_of_death_disease_code">Bezprostredná príčina smrti</label>
+<select id="inspection-immediate_cause_of_death_disease_code" class="d-field" name="Inspection[immediate_cause_of_death_disease_code]">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-complication_disease_code">
+<label class="d-label" for="inspection-complication_disease_code">Komplikácia</label>
+<select id="inspection-complication_disease_code" class="d-field" name="Inspection[complication_disease_code]">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-primary_cause_of_death_disease_code">
+<label class="d-label" for="inspection-primary_cause_of_death_disease_code">Prvotná príčina smrti</label>
+<select id="inspection-primary_cause_of_death_disease_code" class="d-field" name="Inspection[primary_cause_of_death_disease_code]">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-associated_disease_code">
+<label class="d-label" for="inspection-associated_disease_code">Združené choroby a zmeny</label>
+<select id="inspection-associated_disease_code" class="d-field" name="Inspection[associated_disease_code]">
+<option value="">Prosím zvoľte</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-select field-inspection-death_mechanism_id">
+<label class="d-label" for="inspection-death_mechanism_id">Mechanizmus smrti</label>
+<select id="inspection-death_mechanism_id" class="d-field" name="Inspection[death_mechanism_id]">
+<option value="">Prosím zvoľte</option>
+<option value="1">úmrtie z chorobných príčin</option>
+<option value="2">vonkajšia príčina smrti</option>
+<option value="3">neznáma</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-select field-inspection-external_cause_of_death_disease_code">
+<label class="d-label" for="inspection-external_cause_of_death_disease_code">Vonkajšia príčina smrti</label>
+<select id="inspection-external_cause_of_death_disease_code" class="d-field" name="Inspection[external_cause_of_death_disease_code]">
+
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-inspection_doctor_decision_id">
+<label class="d-label" for="inspection-inspection_doctor_decision_id">Návrh prehliadajúceho lekára</label>
+<select id="inspection-inspection_doctor_decision_id" class="d-field" name="Inspection[inspection_doctor_decision_id]">
+<option value="">Prosím zvoľte</option>
+<option value="1">pochovať</option>
+<option value="2">výkon pitvy</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <fieldset class="d-formgroup" style="color: orange;">
+                                    <label class="d-label">
+                                        Ošetrujúci lekár
+                                    </label>
+                                    <input type="text" disabled="disabled" class="d-field" value="TODO" />
+                                </fieldset>
+
+                            </div>
+
+                            <h3 class="b-typo-h3">Prehliadka</h3>
+
+                            <div class="d-section">
+
+                                <div class="d-formgroup v-text field-inspection-inspection_doctor_id">
+<label class="d-label" for="inspection-inspection_doctor_id">Prehliadajúci lekár</label>
+<select id="inspection-inspection_doctor_id" class="d-field" name="Inspection[inspection_doctor_id]">
+<option value="9198afd3-525f-450f-abc6-25b260c26309">Michal Palkovič</option>
+<option value="be032636-f621-47f7-b615-f438952b3ca6">Peter Martanovič</option>
+<option value="216e2807-4d69-4691-af7d-7fee7b662271">Richard Hokša</option>
+<option value="4f0bf42d-4d69-40a6-ac5c-760845f2a842">Petra Malíková</option>
+<option value="3d5542db-3125-410b-8471-ace0cbcfcbc5">Miriama Náglová</option>
+<option value="fd3dd0a8-d098-4ab3-a498-d4d9d8e19425">Richard Varga</option>
+<option value="1889f243-cabd-4092-86ec-8c234715004e">Ľudovít Danihel</option>
+<option value="c0a378a3-5aac-440d-a2cf-9b2f35d7c998">Kristína Giertlová</option>
+<option value="3ff9fe05-5e7c-4809-850f-12bb8ff04804">Pavol Janega</option>
+<option value="bf613d95-dac4-4a67-bfea-22d241e5c2e9">Daniela Kobzová</option>
+<option value="f39c69b5-aaea-429f-9f2d-1451cde67a4e">Ondrej Kováč</option>
+<option value="93046240-e9d2-46fd-b9e8-b447b165dec1">Katarína Kubišová</option>
+<option value="44784f34-9760-4d28-80b6-a98226ff7707">Kristína Kuracinová</option>
+<option value="7208d039-59ef-4323-b4d3-09cd33ed19a4">Jozef Kuruc</option>
+<option value="2d0bf173-65e9-43e0-8f0f-09d9bdc89865">Hedviga Mrázová</option>
+<option value="4af081a4-ae56-4b77-a65d-fc1bbe875749">Vladimír Šišovský</option>
+<option value="7e7f0c37-1327-4666-b6f9-baa494621345">Svetoslav Štvrtina</option>
+<option value="dbff73d6-2c44-4467-8705-58693ac42f3b">Zuzana Verešová</option>
+<option value="a2800d36-a8eb-495f-a161-23e61ac050e6">Roman Kuruc</option>
+<option value="e7f0465e-ec58-4d1a-b10f-073616eb9f22">Peter Očko</option>
+<option value="7c8d315b-5e8d-4b4f-a1a4-fe4b36037c7d">Andrea Baloghová</option>
+<option value="4e656299-1067-485d-a824-62b32ed71a29">Dalibor Hojsík</option>
+<option value="134b5944-059d-4e07-8a41-70f86a47bb79">Peter Kováč</option>
+<option value="14b1e27e-4b67-4496-b5f8-6257d689e75e">Mikuláš Ľubomír</option>
+<option value="14b6cb86-3c0f-4e3d-83a0-45b0710e97ad">Norbert Moravanský</option>
+<option value="61eba7c9-c8e0-4c5a-949b-d33c1c38b20f">Jozef Šidlo</option>
+<option value="8747a463-459b-4aca-ac4f-8a67fd85beab">Ján Šikuta</option>
+<option value="ed65ba2a-02d7-488f-a674-3298f6d661e3">Denis Valent</option>
+<option value="575adb8a-9671-409e-87a1-aa3d74661bb4">Anežka Zummerová</option>
+<option value="9a45ecfa-cb50-44ea-aac2-3d2451dd3a76">Eva Nevická</option>
+<option value="1f2011c7-6656-4016-abec-00e76d0b4b1c">Richard Kóša</option>
+<option value="7133aacc-9a0d-40a8-a853-6cbac52345ce">Jaroslav Kytlic</option>
+<option value="47856542-bf46-4550-9d2e-0e1ff524471b">Michaela Rendeková</option>
+<option value="c604ceaf-9c08-48ca-8624-8251874a41f7">Ivan Závodný</option>
+<option value="46e77891-5d3b-49e4-b647-6a9f44014476">Martin Zdarilek</option>
+<option value="46d0bc83-eb32-4016-86fe-f0a503d580ae">František Štuller</option>
+<option value="7d0125d4-8c3f-4316-9b23-1a3be9077d12">Jakub Bízik</option>
+<option value="e8d9ace4-04d5-496d-b8ab-04fa1bd066f8">Soňa Fabiánová</option>
+<option value="c4681ef0-ae21-43cf-8c29-0ee1a6413da7">Andrej Hajtman</option>
+<option value="429ca3e1-c443-4b0d-8c44-d4ac075a1d87">Martin Janík</option>
+<option value="70054861-0ab1-4d81-a461-08cc9f78c992">Jozef Krajčovič</option>
+<option value="e0577b99-4932-44e6-a861-287e5954aaf6">František Novomeský</option>
+<option value="21ba6ed9-0fe4-4083-a30b-adca68a92e69">Ľubomír Straka</option>
+<option value="2bdc4fe8-b107-4c1c-90be-5237e4c1e7de">Jaroslav Ivan</option>
+<option value="6d8ecab3-40e7-4208-bf19-b9adc9a3d4ca">Veronika Buzalková</option>
+<option value="63ba5184-c226-4f34-a837-6a6be2c4b882">Lívia Jančiová</option>
+<option value="21f227f4-f3c4-42a1-a293-276b817fc83b">Boris Ťažký</option>
+<option value="fe813317-0b5c-4749-9000-5aa8ab55734c">Ivana Jagošová</option>
+<option value="2152fb4e-a708-4f23-ba59-2f1f342b8086">Michal Kováč</option>
+<option value="7b2ded52-4416-4799-9ce1-3e368062f78b">Emil Kutiš</option>
+<option value="8672f4e1-7efe-4149-b665-51ce7abb2487">Jozef Maron</option>
+<option value="c395c2d5-5afb-4e58-b14d-51711d655a86">Romana Pitková</option>
+<option value="50d48b3e-c36e-4e8b-a558-ef902a36000a">Barbora Šturdíková</option>
+<option value="6631b750-7f86-4d58-8d6f-1c7a3b47e5a7">Tivadar Tuhársky</option>
+<option value="28a0d52b-6f3d-4590-99aa-8d3bc021ea34">Lucia Zacharová</option>
+<option value="1f8742ff-3f26-43f9-bc7b-3e00aab00074">Martin Kováč</option>
+<option value="07fd6c79-3455-4437-9760-f13fef700a14">Richard Bašista</option>
+<option value="adf523ca-065a-461a-b0dc-1ac1a3bf8173">Anna Dubovická</option>
+<option value="a7bffa7c-00bd-49b0-a803-c77be580f431">Oľga Girašková</option>
+<option value="dde999c0-c02e-45cc-a28d-71225efafb4f">Martin Kopřiva</option>
+<option value="96d17444-0a18-4882-80fd-2558a0ab1129">Ján Bajaj</option>
+<option value="2e964fef-f602-41d7-b215-cec2b71e6f76">Stanislav Niezňanský</option>
+<option value="547348b4-a915-46c4-a4ca-d5d6d80fcac5">Anton Gavel</option>
+<option value="44a250a3-7e06-4c0e-a592-679578a4feac">Vlasta Vyhnálková</option>
+<option value="5cd39419-f3f2-4f27-81a8-cb095db8097a">Michal Dinič</option>
+<option value="3bf9b89a-6c41-4b00-a496-b084a8042563">Daniel Farkaš</option>
+<option value="a41b4a28-ed34-475a-a2e0-ee52b4c8b274">Alžbeta Ginelliová</option>
+<option value="4bfa7a47-f056-4cdc-bba1-cc352c736f57">Zuzana Grochová</option>
+<option value="d3343005-7ce6-45e9-9dfb-5c6d852496a2">Alica Gurková</option>
+<option value="9c031b43-d1d2-47a2-a464-131c837b3075">Peter Lábaj</option>
+<option value="dd60d838-10af-4f77-9a90-c20842f44975">Tibor Mátyás</option>
+<option value="4869f215-01c7-4bce-af15-ff6ad12bdb81">Peter Popaďák</option>
+<option value="b4479e5a-7809-4446-a5ac-60cb973e2e47">Zuzana Benetinová</option>
+<option value="22a1aa74-b36a-449d-bf59-82ad5b885527">Alžbeta Blichárová</option>
+<option value="e258430a-31dd-422a-b675-a6fba27595f5">Nikita Bobrov</option>
+<option value="5f5c7f9e-fbc9-4683-ac4b-492938e96529">Silvia Iannaccone</option>
+<option value="a367a232-d752-4792-98af-33cba0c387c8">Ingrid Nerantzakis</option>
+<option value="e2d328f1-82ce-443c-b708-e7a0ec35833e">Dorota Sopková</option>
+<option value="5c4ce7b7-6c61-42ff-b235-f24d70255ff8">Erika Štammová</option>
+<option value="323e21d7-5c0f-47b9-87c1-3bf67429d545">Ľudmila Verbóová</option>
+<option value="5d8efc76-67e6-4f33-801e-0c4c611a2121" selected>Prehliadajúci Lekar</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-inspection_datetime">
+<label class="d-label" for="inspection-inspection_datetime">Dátum a čas prehliadky</label>
+<input type="datetime-local" id="inspection-inspection_datetime" class="d-field" name="Inspection[inspection_datetime]" value="2023-01-24 14:25:42">
+
+<div class="help-block"></div>
+</div>
+                                <div class="d-formgroup v-text field-inspection-udzs_slapa_office_code required">
+<label class="d-label" for="inspection-udzs_slapa_office_code">Pracovisko SLaPA</label>
+<select id="inspection-udzs_slapa_office_code" class="d-field" name="Inspection[udzs_slapa_office_code]" aria-required="true">
+<option value="111" selected>Patologickoanatomické pracovisko</option>
+<option value="112">Patologickoanatomické pracovisko</option>
+<option value="131">Súdnolekárske pracovisko</option>
+<option value="410">Súdnolekárske a patologickoanatomické pracovisko</option>
+<option value="510">Súdnolekárske a patologickoanatomické pracovisko</option>
+<option value="520">Súdnolekárske a patologickoanatomické pracovisko</option>
+<option value="610">Súdnolekárske a patologickoanatomické pracovisko</option>
+<option value="710">Súdnolekárske a patologickoanatomické pracovisko</option>
+<option value="720">Súdnolekárske a patologickoanatomické pracovisko</option>
+<option value="810">Súdnolekárske a patologickoanatomické pracovisko</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-step v-isolated">
+                <input class="d-check is_hidden" type="checkbox" id="showsectio12tab5" checked="">
+                <div class="d-header">
+                    <h2 class="b-typo-h2">Prílohy prehliadky</h2>
+                    <label for="showsection1tab5" class="d-navigation">
+                        <span class="d-icon"></span>
+                        <span class="is_readeronly">zobraziť/skryť</span>
+                    </label>
+                </div>
+                <div class="d-content">
+                    <div class="c-forms">
+                        <div class="d-form">
+                            <div class="d-section">
+                                <div style="padding: 3em; border: 3px dashed #ccc; border-radius: 1em; margin: 1em; width: 100%; text-align: center;">
+                                    Pretiahnite súbory (drag & drop) na toto miesto (alebo kliknite do tohto poľa) pre nahranie príloh
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </div>
+    <div class="d-control">
+        <div class="d-left">
+            <button id="previousStep" type="button" disabled="disabled" class="c-buttons">Predošlý</button>
+        </div>
+        <div class="d-menu">
+            <button type="submit" class="c-buttons" name="submit" value="ACTION_SAVE_DRAFT">Uložiť rozpracovanú</button>                        
+            <button type="submit" class="c-buttons v-green" name="submit" value="ACTION_SUBMIT_BY_INSPECTION_DOCTOR">Odoslať</button>                    
+        </div>
+        <div class="d-right">
+            <button id="nextStep" type="button" class="c-buttons v-green">Nasledujúci</button>
+        </div>
+    </div>
+    </form>
+
+        </div>
+    </div>
+    <div id="systemModal" tabindex="0" class="c-modal is_hidden" role="dialog" aria-modal="true">
+        <div class="d-head">
+            <h3 tabindex="0" class="b-typo-h3 v-modal">Nadpis</h3>
+            <button class="c-buttons v-close js-close-system-modal" role="button">
+                <span class="is_readeronly">Zavrieť</span>
+            </button>
+        </div>
+        <div class="d-body" tabindex="0">
+        </div>
+        <div class="d-footer js-popuphint-container-footer">
+            <button class="c-buttons v-blue v-size-m v-normal js-close-system-modal" role="button">
+                Zavrieť
+            </button>
+        </div>
+    </div>
+</main>
+
+<footer class="c-footer">
+    <div class="d-container">
+        <p class="d-copy">&copy; ePrehliadky 2023</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="http://localhost:20080/js/lib/jquery.min.js?v=1674566742"></script>
+<script type="text/javascript" src="http://localhost:20080/js/lib/01-select2.full.min.js?v=1674566742"></script>
+<script type="text/javascript" src="http://localhost:20080/js/lib/01-select2-sk.js?v=1674566742"></script>
+<script type="text/javascript" src="http://localhost:20080/js/lib/10-select2-init.js?v=1674566742"></script>
+
+<script type="text/javascript" src="http://localhost:20080/js/site.js?v=1674566742"></script>
+
+<div id="yii-debug-toolbar" data-url="/debug/default/toolbar?tag=63cfdc5657bcf" data-skip-urls="[]" style="display:none" class="yii-debug-toolbar-bottom"></div><style>#yii-debug-toolbar-logo{position:fixed;right:31px;bottom:4px}@media print{.yii-debug-toolbar{display:none !important}}.yii-debug-toolbar{font:11px Verdana, Arial, sans-serif;text-align:left;width:96px;transition:width .3s ease;z-index:1000000}.yii-debug-toolbar.yii-debug-toolbar_active:not(.yii-debug-toolbar_animating) .yii-debug-toolbar__bar{overflow:visible;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.yii-debug-toolbar.yii-debug-toolbar_iframe_active:not(.yii-debug-toolbar_animating) .yii-debug-toolbar__resize-handle{display:block;height:4px;cursor:ns-resize;margin-bottom:0;z-index:1000001;position:absolute;left:0;right:0}.yii-debug-toolbar:not(.yii-debug-toolbar_active) .yii-debug-toolbar__bar,.yii-debug-toolbar.yii-debug-toolbar_animating .yii-debug-toolbar__bar{height:40px}.yii-debug-toolbar_active{width:100%}.yii-debug-toolbar_active .yii-debug-toolbar__toggle-icon{-webkit-transform:rotate(0);transform:rotate(0)}.yii-debug-toolbar_position_top{margin:0 0 20px 0;width:100%}.yii-debug-toolbar_position_bottom{position:fixed;right:0;bottom:0;margin:0}.yii-debug-toolbar__bar{position:relative;padding:0;font:11px Verdana, Arial, sans-serif;text-align:left;overflow:hidden;box-sizing:content-box;display:flex;flex-wrap:wrap;background:#fff;background:-moz-linear-gradient(top, #fff 0%, #f7f7f7 100%);background:-webkit-linear-gradient(top, #fff 0%, #f7f7f7 100%);background:linear-gradient(to bottom, #fff 0%, #f7f7f7 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f7f7f7', GradientType=0);border:1px solid rgba(0,0,0,0.11);direction:ltr}.yii-debug-toolbar__bar::after{content:'';display:table;clear:both}.yii-debug-toolbar__view{height:0;overflow:hidden;background:white}.yii-debug-toolbar__view iframe{margin:0;padding:10px 0 0;height:100%;width:100%;border:0}.yii-debug-toolbar_iframe_active .yii-debug-toolbar__view{height:100%}.yii-debug-toolbar_iframe_active .yii-debug-toolbar__toggle-icon{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.yii-debug-toolbar_iframe_active .yii-debug-toolbar__external{display:block}.yii-debug-toolbar_iframe_animating .yii-debug-toolbar__view{transition:height .3s ease}.yii-debug-toolbar__block{margin:0;border-right:1px solid rgba(0,0,0,0.11);border-bottom:1px solid rgba(0,0,0,0.11);padding:4px 8px;line-height:32px;white-space:nowrap}@media (max-width: 767.98px){.yii-debug-toolbar__block{flex-grow:1;text-align:center}}.yii-debug-toolbar__block a{display:inline-block;text-decoration:none;color:black}.yii-debug-toolbar__block img{vertical-align:middle;width:30px;height:30px}.yii-debug-toolbar__block_active,.yii-debug-toolbar__ajax:hover{background:#f7f7f7;background:-moz-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:-webkit-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:linear-gradient(to bottom, #f7f7f7 0%, #e0e0e0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e0e0e0', GradientType=0)}.yii-debug-toolbar__label{display:inline-block;padding:2px 4px;font-size:12px;font-weight:normal;line-height:14px;white-space:nowrap;vertical-align:middle;max-width:100px;overflow-x:hidden;text-overflow:ellipsis;color:#ffffff;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#737373;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.yii-debug-toolbar__label:empty{display:none}a.yii-debug-toolbar__label:hover,a.yii-debug-toolbar__label:focus{color:#ffffff;text-decoration:none;cursor:pointer}.yii-debug-toolbar__label_important,.yii-debug-toolbar__label_error{background-color:#b94a48}.yii-debug-toolbar__label_important[href]{background-color:#953b39}.yii-debug-toolbar__label_warning,.yii-debug-toolbar__badge_warning{background-color:#f89406}.yii-debug-toolbar__label_warning[href]{background-color:#c67605}.yii-debug-toolbar__label_success{background-color:#217822}.yii-debug-toolbar__label_success[href]{background-color:#356635}.yii-debug-toolbar__label_info{background-color:#0b72b8}.yii-debug-toolbar__label_info[href]{background-color:#2d6987}.yii-debug-toolbar__label_inverse,.yii-debug-toolbar__badge_inverse{background-color:#333333}.yii-debug-toolbar__label_inverse[href],.yii-debug-toolbar__badge_inverse[href]{background-color:#1a1a1a}.yii-debug-toolbar__title{background:#f7f7f7;background:-moz-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:-webkit-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:linear-gradient(to bottom, #f7f7f7 0%, #e0e0e0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e0e0e0', GradientType=0)}.yii-debug-toolbar__block_last{width:80px;height:40px;float:left}.yii-debug-toolbar__toggle,.yii-debug-toolbar__external{cursor:pointer;position:absolute;width:30px;height:30px;font-size:25px;font-weight:100;line-height:28px;color:#ffffff;text-align:center;opacity:0.5;filter:alpha(opacity=50);transition:opacity .3s ease}.yii-debug-toolbar__toggle:hover,.yii-debug-toolbar__toggle:focus,.yii-debug-toolbar__external:hover,.yii-debug-toolbar__external:focus{color:#ffffff;text-decoration:none;opacity:0.9;filter:alpha(opacity=90)}.yii-debug-toolbar__toggle-icon,.yii-debug-toolbar__external-icon{display:inline-block;background-position:50% 50%;background-repeat:no-repeat}.yii-debug-toolbar__toggle{right:10px;bottom:4px}.yii-debug-toolbar__toggle-icon{padding:7px 0;width:10px;height:16px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMTUuNTYzIDQwLjgzNmEuOTk3Ljk5NyAwIDAgMCAxLjQxNCAwbDE1LTE1YTEgMSAwIDAgMCAwLTEuNDE0bC0xNS0xNWExIDEgMCAwIDAtMS40MTQgMS40MTRMMjkuODU2IDI1LjEzIDE1LjU2MyAzOS40MmExIDEgMCAwIDAgMCAxLjQxNHoiLz48L3N2Zz4=");transition:-webkit-transform .3s ease-out;transition:transform .3s ease-out;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.yii-debug-toolbar__external{display:none;right:50px;bottom:4px}.yii-debug-toolbar__external-icon{padding:8px 0;width:14px;height:14px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMzkuNjQyIDkuNzIyYTEuMDEgMS4wMSAwIDAgMC0uMzgyLS4wNzdIMjguMTAzYTEgMSAwIDAgMCAwIDJoOC43NDNMMjEuNyAyNi43OWExIDEgMCAwIDAgMS40MTQgMS40MTVMMzguMjYgMTMuMDZ2OC43NDNhMSAxIDAgMCAwIDIgMFYxMC42NDZhMS4wMDUgMS4wMDUgMCAwIDAtLjYxOC0uOTI0eiIvPjxwYXRoIGQ9Ik0zOS4yNiAyNy45ODVhMSAxIDAgMCAwLTEgMXYxMC42NmgtMjh2LTI4aDEwLjY4M2ExIDEgMCAwIDAgMC0ySDkuMjZhMSAxIDAgMCAwLTEgMXYzMGExIDEgMCAwIDAgMSAxaDMwYTEgMSAwIDAgMCAxLTF2LTExLjY2YTEgMSAwIDAgMC0xLTF6Ii8+PC9zdmc+")}.yii-debug-toolbar__switch-icon{margin-left:10px;padding:5px 10px;width:18px;height:18px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDUwIDUwIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIGQ9Im00MS4xIDIzYy0wLjYgMC0xIDAuNC0xIDF2MTAuN2wtMjUuNi0wLjFjMCAwIDAtMiAwLTIuOCAwLTAuOC0wLjctMS0xLTAuNmwtMy41IDMuNWMtMC42IDAuNi0wLjYgMS4zIDAgMmwzLjQgMy40YzAuNCAwLjQgMS4xIDAuMiAxLTAuNmwwLTIuOWMwIDAgMjAuOCAwLjEgMjYuNiAwIDAuNiAwIDEtMC40IDEtMXYtMTEuN2MwLTAuNi0wLjQtMS0xLTF6TTkgMjYuOSA5IDI2LjkgOSAyNi45IDkgMjYuOSIvPjxwYXRoIGQ9Im05IDI2LjljMC42IDAgMS0wLjQgMS0xdi0xMC43bDI1LjYgMC4xYzAgMCAwIDIgMCAyLjggMCAwLjggMC43IDEgMSAwLjZsMy41LTMuNWMwLjYtMC42IDAuNi0xLjMgMC0ybC0zLjQtMy40Yy0wLjQtMC40LTEuMS0wLjItMSAwLjZsMCAyLjljMCAwLTIwLjgtMC4xLTI2LjYgMC0wLjYgMC0xIDAuNC0xIDF2MTEuN2MwIDAuNiAwLjQgMSAxIDF6Ii8+PC9zdmc+")}.yii-debug-toolbar__ajax{position:relative}.yii-debug-toolbar__ajax:hover .yii-debug-toolbar__ajax_info,.yii-debug-toolbar__ajax:focus .yii-debug-toolbar__ajax_info{visibility:visible}.yii-debug-toolbar__ajax a{color:#337ab7}.yii-debug-toolbar__ajax table{width:100%;table-layout:auto;border-spacing:0;border-collapse:collapse}.yii-debug-toolbar__ajax table td{padding:4px;font-size:12px;line-height:normal;vertical-align:top;border-top:1px solid #ddd}.yii-debug-toolbar__ajax table th{padding:4px;font-size:11px;line-height:normal;vertical-align:bottom;border-bottom:2px solid #ddd}.yii-debug-toolbar__ajax_info{visibility:hidden;transition:visibility .2s linear;background-color:white;box-shadow:inset 0 -10px 10px -10px #e1e1e1;position:absolute;bottom:40px;left:-1px;padding:10px;max-width:480px;max-height:480px;word-wrap:break-word;overflow:hidden;overflow-y:auto;box-sizing:border-box;border:1px solid rgba(0,0,0,0.11);z-index:1000001}.yii-debug-toolbar__ajax_request_status{color:white;padding:2px 5px}.yii-debug-toolbar__ajax_request_url{max-width:170px;overflow:hidden;text-overflow:ellipsis}
+</style><script>(function () {
+    'use strict';
+
+    var findToolbar = function () {
+            return document.querySelector('#yii-debug-toolbar');
+        },
+        ajax = function (url, settings) {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            settings = settings || {};
+            xhr.open(settings.method || 'GET', url, true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Accept', 'text/html');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 && settings.success) {
+                        settings.success(xhr);
+                    } else if (xhr.status !== 200 && settings.error) {
+                        settings.error(xhr);
+                    }
+                }
+            };
+            xhr.send(settings.data || '');
+        },
+        url,
+        div,
+        toolbarEl = findToolbar(),
+        toolbarAnimatingClass = 'yii-debug-toolbar_animating',
+        barSelector = '.yii-debug-toolbar__bar',
+        viewSelector = '.yii-debug-toolbar__view',
+        blockSelector = '.yii-debug-toolbar__block',
+        toggleSelector = '.yii-debug-toolbar__toggle',
+        externalSelector = '.yii-debug-toolbar__external',
+
+        CACHE_KEY = 'yii-debug-toolbar',
+        ACTIVE_STATE = 'active',
+
+        animationTime = 300,
+
+        activeClass = 'yii-debug-toolbar_active',
+        iframeActiveClass = 'yii-debug-toolbar_iframe_active',
+        iframeAnimatingClass = 'yii-debug-toolbar_iframe_animating',
+        titleClass = 'yii-debug-toolbar__title',
+        blockClass = 'yii-debug-toolbar__block',
+        ignoreClickClass = 'yii-debug-toolbar__ignore_click',
+        blockActiveClass = 'yii-debug-toolbar__block_active',
+        requestStack = [];
+
+    if (toolbarEl) {
+        url = toolbarEl.getAttribute('data-url');
+
+        ajax(url, {
+            success: function (xhr) {
+                div = document.createElement('div');
+                div.innerHTML = xhr.responseText;
+
+                toolbarEl.parentNode && toolbarEl.parentNode.replaceChild(div, toolbarEl);
+
+                showToolbar(findToolbar());
+
+                var event;
+                if (typeof(Event) === 'function') {
+                    event = new Event('yii.debug.toolbar_attached', {'bubbles': true});
+                } else {
+                    event = document.createEvent('Event');
+                    event.initEvent('yii.debug.toolbar_attached', true, true);
+                }
+
+                div.dispatchEvent(event);
+            },
+            error: function (xhr) {
+                toolbarEl.innerText = xhr.responseText;
+            }
+        });
+    }
+
+    function showToolbar(toolbarEl) {
+        var barEl = toolbarEl.querySelector(barSelector),
+            viewEl = toolbarEl.querySelector(viewSelector),
+            toggleEl = toolbarEl.querySelector(toggleSelector),
+            externalEl = toolbarEl.querySelector(externalSelector),
+            blockEls = barEl.querySelectorAll(blockSelector),
+            blockLinksEls = document.querySelectorAll(blockSelector + ':not(.' + titleClass + ') a'),
+            iframeEl = viewEl.querySelector('iframe'),
+            iframeHeight = function () {
+                return (window.innerHeight * (toolbarEl.dataset.height / 100) - barEl.clientHeight) + 'px';
+            },
+            isIframeActive = function () {
+                return toolbarEl.classList.contains(iframeActiveClass);
+            },
+            resizeIframe = function(mouse) {
+                var availableHeight = window.innerHeight - barEl.clientHeight;
+                viewEl.style.height = Math.min(availableHeight, availableHeight - mouse.y) + "px";
+            },
+            showIframe = function (href) {
+                toolbarEl.classList.add(iframeAnimatingClass);
+                toolbarEl.classList.add(iframeActiveClass);
+
+                iframeEl.src = externalEl.href = href;
+                iframeEl.removeAttribute('tabindex');
+
+                viewEl.style.height = iframeHeight();
+                setTimeout(function () {
+                    toolbarEl.classList.remove(iframeAnimatingClass);
+                }, animationTime);
+            },
+            hideIframe = function () {
+                toolbarEl.classList.add(iframeAnimatingClass);
+                toolbarEl.classList.remove(iframeActiveClass);
+                iframeEl.setAttribute("tabindex", "-1");
+                removeActiveBlocksCls();
+
+                externalEl.href = '#';
+                viewEl.style.height = '';
+                setTimeout(function () {
+                    toolbarEl.classList.remove(iframeAnimatingClass);
+                }, animationTime);
+            },
+            removeActiveBlocksCls = function () {
+                [].forEach.call(blockEls, function (el) {
+                    el.classList.remove(blockActiveClass);
+                });
+            },
+            toggleToolbarClass = function (className) {
+                toolbarEl.classList.add(toolbarAnimatingClass);
+                if (toolbarEl.classList.contains(className)) {
+                    toolbarEl.classList.remove(className);
+                    [].forEach.call(blockLinksEls, function (el) {
+                        el.setAttribute('tabindex', "-1");
+                    });
+                } else {
+                    [].forEach.call(blockLinksEls, function (el) {
+                        el.removeAttribute('tabindex');
+                    });
+                    toolbarEl.classList.add(className);
+                }
+                setTimeout(function () {
+                    toolbarEl.classList.remove(toolbarAnimatingClass);
+                }, animationTime);
+            },
+            toggleStorageState = function (key, value) {
+                if (window.localStorage) {
+                    var item = localStorage.getItem(key);
+
+                    if (item) {
+                        localStorage.removeItem(key);
+                    } else {
+                        localStorage.setItem(key, value);
+                    }
+                }
+            },
+            restoreStorageState = function (key) {
+                if (window.localStorage) {
+                    return localStorage.getItem(key);
+                }
+            },
+            togglePosition = function () {
+                if (isIframeActive()) {
+                    hideIframe();
+                } else {
+                    toggleToolbarClass(activeClass);
+                    toggleStorageState(CACHE_KEY, ACTIVE_STATE);
+                }
+            };
+
+        if (restoreStorageState(CACHE_KEY) === ACTIVE_STATE) {
+            var transition = toolbarEl.style.transition;
+            toolbarEl.style.transition = 'none';
+            toolbarEl.classList.add(activeClass);
+            setTimeout(function () {
+                toolbarEl.style.transition = transition;
+            }, animationTime);
+        } else {
+            [].forEach.call(blockLinksEls, function (el) {
+                el.setAttribute('tabindex', "-1");
+            });
+        }
+
+        toolbarEl.style.display = 'block';
+
+        window.onresize = function () {
+            if (toolbarEl.classList.contains(iframeActiveClass)) {
+                viewEl.style.height = iframeHeight();
+            }
+        };
+
+        toolbarEl.addEventListener("mousedown", function(e) {
+            if (isIframeActive() && (e.y - toolbarEl.offsetTop < 4 /* 4px click zone */)) {
+                document.addEventListener("mousemove", resizeIframe, false);
+            }
+        }, false);
+
+        document.addEventListener("mouseup", function(){
+            if (isIframeActive()) {
+                document.removeEventListener("mousemove", resizeIframe, false);
+            }
+        }, false);
+
+        barEl.onclick = function (e) {
+            var target = e.target,
+                block = findAncestor(target, blockClass);
+
+            if (block
+                && !block.classList.contains(titleClass)
+                && !block.classList.contains(ignoreClickClass)
+                && e.which !== 2 && !e.ctrlKey // not mouse wheel and not ctrl+click
+            ) {
+                while (target !== this) {
+                    if (target.href) {
+                        removeActiveBlocksCls();
+                        block.classList.add(blockActiveClass);
+                        showIframe(target.href);
+                    }
+                    target = target.parentNode;
+                }
+
+                e.preventDefault();
+            }
+        };
+
+        toggleEl.onclick = togglePosition;
+    }
+
+    function findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls)) ;
+        return el;
+    }
+
+    function renderAjaxRequests() {
+        var requestCounter = document.getElementsByClassName('yii-debug-toolbar__ajax_counter');
+        if (!requestCounter.length) {
+            return;
+        }
+        var ajaxToolbarPanel = document.querySelector('.yii-debug-toolbar__ajax');
+        var tbodies = document.getElementsByClassName('yii-debug-toolbar__ajax_requests');
+        var state = 'ok';
+        if (tbodies.length) {
+            var tbody = tbodies[0];
+            var rows = document.createDocumentFragment();
+            if (requestStack.length) {
+                var firstItem = requestStack.length > 20 ? requestStack.length - 20 : 0;
+                for (var i = firstItem; i < requestStack.length; i++) {
+                    var request = requestStack[i];
+                    var row = document.createElement('tr');
+                    rows.appendChild(row);
+
+                    var methodCell = document.createElement('td');
+                    methodCell.innerHTML = request.method;
+                    row.appendChild(methodCell);
+
+                    var statusCodeCell = document.createElement('td');
+                    var statusCode = document.createElement('span');
+                    if (request.statusCode < 300) {
+                        statusCode.setAttribute('class', 'yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_success');
+                    } else if (request.statusCode < 400) {
+                        statusCode.setAttribute('class', 'yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_warning');
+                    } else {
+                        statusCode.setAttribute('class', 'yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_error');
+                    }
+                    statusCode.textContent = request.statusCode || '-';
+                    statusCodeCell.appendChild(statusCode);
+                    row.appendChild(statusCodeCell);
+
+                    var pathCell = document.createElement('td');
+                    pathCell.className = 'yii-debug-toolbar__ajax_request_url';
+                    pathCell.innerHTML = request.url;
+                    pathCell.setAttribute('title', request.url);
+                    row.appendChild(pathCell);
+
+                    var durationCell = document.createElement('td');
+                    durationCell.className = 'yii-debug-toolbar__ajax_request_duration';
+                    if (request.duration) {
+                        durationCell.innerText = request.duration + " ms";
+                    } else {
+                        durationCell.innerText = '-';
+                    }
+                    row.appendChild(durationCell);
+                    row.appendChild(document.createTextNode(' '));
+
+                    var profilerCell = document.createElement('td');
+                    if (request.profilerUrl) {
+                        var profilerLink = document.createElement('a');
+                        profilerLink.setAttribute('href', request.profilerUrl);
+                        profilerLink.innerText = request.profile;
+                        profilerCell.appendChild(profilerLink);
+                    } else {
+                        profilerCell.innerText = 'n/a';
+                    }
+                    row.appendChild(profilerCell);
+
+                    if (request.error) {
+                        if (state !== "loading" && i > requestStack.length - 4) {
+                            state = 'error';
+                        }
+                    } else if (request.loading) {
+                        state = 'loading'
+                    }
+                    row.className = 'yii-debug-toolbar__ajax_request';
+                }
+                while (tbody.firstChild) {
+                    tbody.removeChild(tbody.firstChild);
+                }
+                tbody.appendChild(rows);
+            }
+            ajaxToolbarPanel.style.display = 'block';
+        }
+        requestCounter[0].innerText = requestStack.length;
+        var className = 'yii-debug-toolbar__label yii-debug-toolbar__ajax_counter';
+        if (state === 'ok') {
+            className += ' yii-debug-toolbar__label_success';
+        } else if (state === 'error') {
+            className += ' yii-debug-toolbar__label_error';
+        }
+        requestCounter[0].className = className;
+    }
+
+    /**
+     * Should AJAX request to be logged in debug panel
+     *
+     * @param requestUrl
+     * @returns {boolean}
+     */
+    function shouldTrackRequest(requestUrl) {
+        var a = document.createElement('a');
+        a.href = requestUrl;
+        var skipAjaxRequestUrls = JSON.parse(toolbarEl.getAttribute('data-skip-urls'));
+        if (Array.isArray(skipAjaxRequestUrls) && skipAjaxRequestUrls.length && skipAjaxRequestUrls.includes(requestUrl)) {
+            return false;
+        }
+        return a.host === location.host;
+    }
+
+    var proxied = XMLHttpRequest.prototype.open;
+
+    XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
+        var self = this;
+
+        if (shouldTrackRequest(url)) {
+            var stackElement = {
+                loading: true,
+                error: false,
+                url: url,
+                method: method,
+                start: new Date()
+            };
+            requestStack.push(stackElement);
+            this.addEventListener('readystatechange', function () {
+                if (self.readyState === 4) {
+                    stackElement.duration = self.getResponseHeader('X-Debug-Duration') || new Date() - stackElement.start;
+                    stackElement.loading = false;
+                    stackElement.statusCode = self.status;
+                    stackElement.error = self.status < 200 || self.status >= 400;
+                    stackElement.profile = self.getResponseHeader('X-Debug-Tag');
+                    stackElement.profilerUrl = self.getResponseHeader('X-Debug-Link');
+                    renderAjaxRequests();
+                }
+            }, false);
+            renderAjaxRequests();
+        }
+        proxied.apply(this, Array.prototype.slice.call(arguments));
+    };
+
+    // catch fetch AJAX requests
+    if (window.fetch) {
+        var originalFetch = window.fetch;
+
+        window.fetch = function (input, init) {
+            var method;
+            var url;
+            if (typeof input === 'string') {
+                method = (init && init.method) || 'GET';
+                url = input;
+            } else if (window.URL && input instanceof URL) { // fix https://github.com/yiisoft/yii2-debug/issues/296
+                method = (init && init.method) || 'GET';
+                url = input.href;
+            } else if (window.Request && input instanceof Request) {
+                method = input.method;
+                url = input.url;
+            }
+            var promise = originalFetch(input, init);
+
+            if (shouldTrackRequest(url)) {
+                var stackElement = {
+                    loading: true,
+                    error: false,
+                    url: url,
+                    method: method,
+                    start: new Date()
+                };
+                requestStack.push(stackElement);
+                promise.then(function (response) {
+                    stackElement.duration = response.headers.get('X-Debug-Duration') || new Date() - stackElement.start;
+                    stackElement.loading = false;
+                    stackElement.statusCode = response.status;
+                    stackElement.error = response.status < 200 || response.status >= 400;
+                    stackElement.profile = response.headers.get('X-Debug-Tag');
+                    stackElement.profilerUrl = response.headers.get('X-Debug-Link');
+                    renderAjaxRequests();
+
+                    return response;
+                }).catch(function (error) {
+                    stackElement.loading = false;
+                    stackElement.error = true;
+                    renderAjaxRequests();
+
+                    throw error;
+                });
+                renderAjaxRequests();
+            }
+
+            return promise;
+        };
+    }
+
+})();
+</script><script>jQuery(function ($) {
+
+                $("#inspection-citizenship_code").select2({"ajax":{"url":"/citizenship/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var citizenships = [];
+                if(data.success){
+                    for(var i in data.citizenships){
+                        citizenships.push({
+                            id : data.citizenships[i].code,
+                            text : data.citizenships[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: citizenships
+                };
+            }
+        }});
+            
+
+            $("#inspection-nationality_id").select2();
+        
+
+            $("#inspection-occupation_id").select2();
+        
+
+                $("#inspection-birth_state_code").select2({"ajax":{"url":"/state/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var states = [];
+                if(data.success){
+                    for(var i in data.states){
+                        states.push({
+                            id : data.states[i].code,
+                            text : data.states[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: states
+                };
+            }
+        }});
+            
+
+                $("#inspection-birth_district_code").select2({"ajax":{"url":"/district/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var districts = [];
+                if(data.success){
+                    for(var i in data.districts){
+                        districts.push({
+                            id : data.districts[i].code,
+                            text : data.districts[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: districts
+                };
+            }
+        }});
+            
+
+                $("#inspection-birth_municipality_code").select2({"ajax":{"url":"/municipality/search","data":function(params) { return {term : params.term ? params.term : "", districtCode: $("[data-ui-address-group=\"step2\"][data-ui-element=\"district_code\"]").val()}; },"processResults":
+            function(data, params){
+                var municipalities = [];
+                if(data.success){
+                    for(var i in data.municipalities){
+                        municipalities.push({
+                            id : data.municipalities[i].code,
+                            text : data.municipalities[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: municipalities
+                };
+            }
+        }});
+            
+
+                $("#inspection-permanent_residence_state_code").select2({"ajax":{"url":"/state/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var states = [];
+                if(data.success){
+                    for(var i in data.states){
+                        states.push({
+                            id : data.states[i].code,
+                            text : data.states[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: states
+                };
+            }
+        }});
+            
+
+                $("#inspection-permanent_residence_district_code").select2({"ajax":{"url":"/district/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var districts = [];
+                if(data.success){
+                    for(var i in data.districts){
+                        districts.push({
+                            id : data.districts[i].code,
+                            text : data.districts[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: districts
+                };
+            }
+        }});
+            
+
+                $("#inspection-permanent_residence_municipality_code").select2({"ajax":{"url":"/municipality/search","data":function(params) { return {term : params.term ? params.term : "", districtCode: $("[data-ui-address-group=\"step2section1\"][data-ui-element=\"district_code\"]").val()}; },"processResults":
+            function(data, params){
+                var municipalities = [];
+                if(data.success){
+                    for(var i in data.municipalities){
+                        municipalities.push({
+                            id : data.municipalities[i].code,
+                            text : data.municipalities[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: municipalities
+                };
+            }
+        }});
+            
+
+                $("#inspection-death_state_code").select2({"ajax":{"url":"/state/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var states = [];
+                if(data.success){
+                    for(var i in data.states){
+                        states.push({
+                            id : data.states[i].code,
+                            text : data.states[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: states
+                };
+            }
+        }});
+            
+
+                $("#inspection-death_district_code").select2({"ajax":{"url":"/district/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var districts = [];
+                if(data.success){
+                    for(var i in data.districts){
+                        districts.push({
+                            id : data.districts[i].code,
+                            text : data.districts[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: districts
+                };
+            }
+        }});
+            
+
+                $("#inspection-death_municipality_code").select2({"ajax":{"url":"/municipality/search","data":function(params) { return {term : params.term ? params.term : "", districtCode: $("[data-ui-address-group=\"step3section1\"][data-ui-element=\"district_code\"]").val()}; },"processResults":
+            function(data, params){
+                var municipalities = [];
+                if(data.success){
+                    for(var i in data.municipalities){
+                        municipalities.push({
+                            id : data.municipalities[i].code,
+                            text : data.municipalities[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: municipalities
+                };
+            }
+        }});
+            
+
+                $("#inspection-immediate_cause_of_death_disease_code").select2({"ajax":{"url":"/international-classification-of-diseases/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var internationalClassificationOfDiseases = [];
+                if(data.success){
+                    for(var i in data.internationalClassificationOfDiseases){
+                        internationalClassificationOfDiseases.push({
+                            id : data.internationalClassificationOfDiseases[i].code,
+                            text : data.internationalClassificationOfDiseases[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: internationalClassificationOfDiseases
+                };
+            }
+        }});
+            
+
+                $("#inspection-complication_disease_code").select2({"ajax":{"url":"/international-classification-of-diseases/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var internationalClassificationOfDiseases = [];
+                if(data.success){
+                    for(var i in data.internationalClassificationOfDiseases){
+                        internationalClassificationOfDiseases.push({
+                            id : data.internationalClassificationOfDiseases[i].code,
+                            text : data.internationalClassificationOfDiseases[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: internationalClassificationOfDiseases
+                };
+            }
+        }});
+            
+
+                $("#inspection-primary_cause_of_death_disease_code").select2({"ajax":{"url":"/international-classification-of-diseases/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var internationalClassificationOfDiseases = [];
+                if(data.success){
+                    for(var i in data.internationalClassificationOfDiseases){
+                        internationalClassificationOfDiseases.push({
+                            id : data.internationalClassificationOfDiseases[i].code,
+                            text : data.internationalClassificationOfDiseases[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: internationalClassificationOfDiseases
+                };
+            }
+        }});
+            
+
+                $("#inspection-associated_disease_code").select2({"ajax":{"url":"/international-classification-of-diseases/search","data":function(params) { return {term : params.term ? params.term : ""}; },"processResults":
+            function(data, params){
+                var internationalClassificationOfDiseases = [];
+                if(data.success){
+                    for(var i in data.internationalClassificationOfDiseases){
+                        internationalClassificationOfDiseases.push({
+                            id : data.internationalClassificationOfDiseases[i].code,
+                            text : data.internationalClassificationOfDiseases[i].official_title
+                        });
+                    }
+                }
+                return {
+                    results: internationalClassificationOfDiseases
+                };
+            }
+        }});
+            
+
+            $("#inspection-inspection_doctor_id").select2();
+        
+
+            $("#inspection-udzs_slapa_office_code").select2();
+        
+
+    epr.inspection.init();
+    epr.inspection.run();
+
+});</script><script type="text/javascript">
+    epr.csrfTokenParam = "_csrf-main";
+    epr.csrfToken = "GnMN9SfrM6KZrK9NxZeIXG61UgemFFZWvyR_kwSUm7BINWGUfrheweDPyyui4dgaPcYkY-dmFSOKaQm-ZqXygA==";
+    epr.init();
+    epr.run();
+</script>
+</body>
+</html>
