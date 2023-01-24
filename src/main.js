@@ -33,6 +33,7 @@ function createWindow() {
 
   log.log("-----------------------------------------");
   log.log("Application version = " + app.getVersion());
+  log.log(__dirname);
   
   autoUpdater.checkForUpdates()
 }
