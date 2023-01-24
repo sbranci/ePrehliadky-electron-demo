@@ -6,8 +6,8 @@ const log = require('electron-log')
 log.transports.file.resolvePath = () => path.join('C:/development/ePrehliadky/ePrehliadky-electron-demo/', '/logs/main.log');
 
 let mainWindow;
-const NOTIFICATION_TITLE = 'Update Notification'
-const NOTIFICATION_BODY = 'Notification from the Main process, a new version is being downloaded.'
+// const NOTIFICATION_TITLE = 'Update Notification'
+// const NOTIFICATION_BODY = 'Notification from the Main process, a new version is being downloaded.'
 
 function createWindow() {
   // Create the browser window.
@@ -23,9 +23,6 @@ function createWindow() {
   });
 
   // Load the index.html of the app.
-  log.log(path.join('C:/development/ePrehliadky/ePrehliadky-electron-demo/', '/logs/main.log'))
-  log.log(path.join(__dirname, 'index.html'))
-  log.log(path.join(__dirname, 'preload.js'))
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   mainWindow.on('show', () => {
@@ -37,13 +34,12 @@ function createWindow() {
   log.log("-----------------------------------------");
   log.log("Application version = " + app.getVersion());
   
-  autoUpdater.checkForUpdatesAndNotify()
+  autoUpdater.checkForUpdates()
 }
 
-function showNotification() {
-  log.log(NOTIFICATION_BODY);
-  new Notification({ title: NOTIFICATION_TITLE, body: NOTIFICATION_BODY }).show()
-}
+// function showNotification() {
+//   new Notification({ title: NOTIFICATION_TITLE, body: NOTIFICATION_BODY }).show()
+// }
 
 app.on("ready", () => {
   createWindow();
@@ -69,9 +65,9 @@ ipcMain.handle('getAppVersion', () => {
 
 // ------------ AUTO-UPDATER SECTION ------------
 
-autoUpdater.on("checking-for-update", () => {
-  log.info("Checking for update...");
-})
+// autoUpdater.on("checking-for-update", () => {
+//   log.info("Checking for update...");
+// })
 
 autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
 	const dialogOpts = {
@@ -82,23 +78,23 @@ autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
 		detail: 'A new version is being downloaded.'
 	}
   log.info("Update available.");
-  showNotification();
+  // showNotification();
 	dialog.showMessageBox(dialogOpts, (response) => {
 
   });
 })
 
-autoUpdater.on("update-not-available", (info) => {
-  log.info("Update not available.");
-})
+// autoUpdater.on("update-not-available", (info) => {
+//   log.info("Update not available.");
+// })
 
 // autoUpdater.on("error", (err) => {
 //   log.info("Error in auto-update. " + err);
 // })
 
-autoUpdater.on("download-progress", (progressTrack) => {
-  log.info("Download progress...");
-})
+// autoUpdater.on("download-progress", (progressTrack) => {
+//   log.info("Download progress...");
+// })
 
 autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) => {
 	const dialogOpts = {
@@ -110,6 +106,6 @@ autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) => {
 	};
   log.info("Update downloaded.");
 	dialog.showMessageBox(dialogOpts).then((returnValue) => {
-		if (returnValue.response === 0) autoUpdater.quitAndInstall(false, true)
+		if (returnValue.response === 0) autoUpdater.quitAndInstall()
 	})
 });
